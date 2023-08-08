@@ -19,7 +19,7 @@
      - Comedy
      - Drama
      - Science Fiction
-   - Handles genre selection and emits the selected genre.
+     - Handles genre selection and emits the selected genre.
 
 4. MovieDetails.vue
    - Displays movie details after genre selection:
