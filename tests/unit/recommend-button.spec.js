@@ -1,9 +1,9 @@
   // RecommendButton Component
   describe("RecommendButton Component", () => {
-    it("displays a 'Recommend' button", () => {
-      // Test if the "Recommend" button shows up.
-      // Vue.js Code: Use <button> tag to create the button element.
-    });
+    // it("displays a 'Recommend' button", () => {
+    //   // Test if the "Recommend" button shows up.
+    //   // Vue.js Code: Use <button> tag to create the button element.
+    // });
 
     it("makes genre selector visible after 'Recommend' button is clicked for the first time", () => {
       // Test if clicking the "Recommend" button for the first time makes the genre selector visible.
