@@ -1,55 +1,49 @@
-# pierre-app
+# pierre-app Outline
 
-# Movie Recommendations App
+1. App.vue
+   - Root component that houses the entire application.
+   - Imports and renders the following components:
+     - RecommendButton
+     - GenreSelector
+     - MovieDetails
 
-Welcome to the Movie Recommendations App! This app lets users discover random movie suggestions at the click of a button. It utilizes an external movie database API to fetch movie information.
+2. RecommendButton.vue
+   - Displays a "Recommend" button.
+   - Handles button clicks to trigger genre selection and movie recommendation.
+   - Emits events to communicate with other components.
 
-## Features
+3. GenreSelector.vue
+   - Displays "Pick a Genre" text and a dropdown menu with genre options:
+     - Action
+     - Romance
+     - Comedy
+     - Drama
+     - Science Fiction
+   - Handles genre selection and emits the selected genre.
 
-- Click the "Recommend" button to get a random movie suggestion.
-- View movie details after receiving a recommendation.
+4. MovieDetails.vue
+   - Displays movie details after genre selection:
+     - Movie Name
+     - Genre
+     - Release Date
+     - IMDB Rating
+   - Includes a "View Description" button to reveal the movie's description.
 
-## Technologies Used
+5. ViewDescription.vue
+   - Displays a "View Description" button.
+   - Handles button clicks to reveal the movie's description.
+   - Shows the movie's description when the button is clicked.
 
-- Vue.js
-- External Movie Database API
-
-## Getting Started
-
-1. Clone the repository.
-2. Navigate to the project folder.
-3. Install dependencies using `npm install`.
-4. Run the app using `npm run serve`.
-
-## How to Use
-
-1. Open the app in your web browser.
-2. Click the "Recommend" button to receive a random movie suggestion.
-3. Movie details will be displayed after receiving a recommendation.
-
-## API Integration
-
-To fetch movie data, this app utilizes the [External Movie Database API](https://rapidapi.com/SAdrian/api/moviesdatabase/) through Axios. Below is an example of how the API is used:
-
-```javascript
-const axios = require('axios');
-
-const options = {
-  method: 'GET',
-  url: 'https://moviesdatabase.p.rapidapi.com/titles/seasons/%7BseriesId%7D',
-  headers: {
-    'X-RapidAPI-Key': 'd5527babbcmsh7bb944b972dcafap14db5ajsnb9bfec09dd0f',
-    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-  }
-};
-
-try {
-  const response = await axios.request(options);
-  console.log(response.data);
-} catch (error) {
-  console.error(error);
-}
-
+6. Flow
+   - User loads the app.
+   - Clicks the "Recommend" button in the RecommendButton component.
+   - GenreSelector component becomes visible after the first click.
+   - User selects a genre from the dropdown menu in the GenreSelector component.
+   - RecommendButton component triggers the GenreSelector to generate a random movie suggestion based on the selected genre.
+   - MovieDetails component displays the details of the recommended movie, including name, genre, release date, and IMDB rating.
+   - "View Description" button becomes visible under the movie details.
+   - User clicks the "View Description" button to reveal the movie's description.
+   - User can repeat the process by clicking the "Recommend" button again and selecting a different genre.
 
 ## Project setup
 ```
