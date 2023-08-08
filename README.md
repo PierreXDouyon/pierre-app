@@ -1,7 +1,7 @@
 # pierre-app Outline
 
 1. App.vue
-   - Root component that houses the entire application.
+   - Houses the entire application.
    - Imports and renders the following components:
      - RecommendButton
      - GenreSelector
