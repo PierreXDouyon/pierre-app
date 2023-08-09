@@ -1,3 +1,5 @@
+/// MovieDescription Component
+describe("MovieDescription Component", () => {
 it("should hide(with movie description being set to false in the movie array)movie description initially", () => {
     // Test if the movie description is not visible initially with true and false test.
     // Vue.js Code: by default the descripyion value is false when clicked it becomes true.
@@ -14,4 +16,5 @@ it("should hide(with movie description being set to false in the movie array)mov
     // Vue.js Code: Use a button with '@click' directive to emit a custom event.
     // Interaction: User clicks the button to view the movie's description.
   });
-  
+    
+});
