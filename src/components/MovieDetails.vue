@@ -1,25 +1,31 @@
 <template>
   <div class="movie-details">
-    <img :src="movie.image" :alt="movie.title" />
+    <img :src="movie.image" alt="Movie Poster" />
     <h2>{{ movie.title }}</h2>
     <p>Genre: {{ movie.genre }}</p>
     <p>Release Date: {{ movie.releaseDate }}</p>
     <p>IMDB Rating: {{ movie.imdbRating }}</p>
-    <ViewDescription :description="movie.description" />
+    <ViewDescription :movie="movie"></ViewDescription>
   </div>
 </template>
 
 <script>
-import ViewDescription from "@/components/ViewDescription.vue";
+import ViewDescription from "./ViewDescription.vue";
 
 export default {
-  props: {
-    movie: Object,
-  },
+  name: "MovieDetails",
   components: {
     ViewDescription,
+  },
+  props: {
+    movie: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
 
-<!-- Styles and other elements -->
+<style scoped>
+/* Your styles here */
+</style>

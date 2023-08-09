@@ -9,16 +9,22 @@
 </template>
 
 <script>
-import MovieDetails from "@/components/MovieDetails.vue";
+import MovieDetails from "./MovieDetails.vue";
 
 export default {
-  props: {
-    movies: Array,
-  },
+  name: "MovieList",
   components: {
     MovieDetails,
+  },
+  props: {
+    movies: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
 
-<!-- Styles and other elements -->
+<style scoped>
+/* Your styles here */
+</style>

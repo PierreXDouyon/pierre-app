@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1>My Movie App</h1>
-    <GenreSelector></GenreSelector>
-    <MovieList :movies="movies"></MovieList>
+    <GenreSelector :genres="genres" @selectGenre="handleSelectGenre" />
+    <MovieList :movies="filteredMovies" />
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      genres: ["action", "romance", "comedy", "drama"],
       movies: [
         {
           id: 1,
@@ -43,11 +44,102 @@ export default {
           imdbRating: 7.2,
           description: "This is the description for Movie 3.",
         },
+        {
+          id: 4,
+          title: "Movie 4",
+          genre: "Action",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 5,
+          title: "Movie 5",
+          genre: "Comedy",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 6,
+          title: "Movie 6",
+          genre: "Drama",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 7,
+          title: "Movie 7",
+          genre: "Action",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 8,
+          title: "Movie 8",
+          genre: "Action",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 9,
+          title: "Movie 9",
+          genre: "Comedy",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 10,
+          title: "Movie 10",
+          genre: "Drama",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 11,
+          title: "Movie 1",
+          genre: "Drama",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 12,
+          title: "Movie 12",
+          genre: "Romanace",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 13,
+          title: "Movie 13",
+          genre: "Romance",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
       ],
+      selectedGenre: null,
     };
   },
+  computed: {
+    filteredMovies() {
+      if (!this.selectedGenre) {
+        return this.movies.slice(0, 3); // Display the first three movies by default
+      }
+      return this.movies.filter((movie) => movie.genre === this.selectedGenre);
+    },
+  },
   methods: {
-    // Add your methods here
+    handleSelectGenre(genre) {
+      this.selectedGenre = genre;
+    },
   },
 };
 </script>

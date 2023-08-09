@@ -1,34 +1,31 @@
 <template>
   <div class="genre-selector">
-    <label for="genre">Select a Genre:</label>
-    <select id="genre" v-model="selectedGenre" @change="emitGenre">
-      <option v-for="genre in genres" :value="genre" :key="genre">
+    <p>Select a Genre:</p>
+    <ul>
+      <li v-for="genre in genres" :key="genre" @click="selectGenre(genre)">
         {{ genre }}
-      </option>
-    </select>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
+  name: "GenreSelector",
   props: {
-    genres: Array,
+    genres: {
+      type: Array,
+      required: true,
+    },
   },
-  setup(props, { emit }) {
-    const selectedGenre = ref("");
-
-    const emitGenre = () => {
-      emit("genreSelected", selectedGenre.value);
-    };
-
-    return {
-      selectedGenre,
-      emitGenre,
-    };
+  methods: {
+    selectGenre(genre) {
+      this.$emit("selectGenre", genre);
+    },
   },
 };
 </script>
 
-<!-- Styles and other elements -->
+<style scoped>
+/* Your styles here */
+</style>
