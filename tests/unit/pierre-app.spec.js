@@ -263,6 +263,9 @@ Click [Select Genre Button]
 
 Movie Details:
 --------------
+[Movie Image]
+  |
+  v
 [Movie Title]
   |
   v
@@ -275,13 +278,13 @@ Movie Details:
 [Movie IMDB Rating]
   |
   v
-Click [Recommend Button]
-  |
-  v
-[Random Movie Suggestion]
-  |
-  v
 Click [View Description Button]
   |
   v
 [Movie Description]
+  |
+  v
+Click [Recommend Button]
+  |
+  v
+[Random Movie Suggestion]

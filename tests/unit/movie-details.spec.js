@@ -6,7 +6,7 @@ describe("MovieDetails Component", () => {
     //   // Interaction: User clicks the button to view the movie's description.
     // });
 
-    it("picks a random movie when 'Recommend' button is clicked", () => {
+    it("picks a movie when 'Recommend' button is clicked", () => {
       // Test if clicking the "Recommend" button gives us a random movie suggestion.
       // Vue.js Code: Create a function to pick a random movie based on the selected genre.
       // Interaction: The 'MovieDetails' component generates random movie suggestions based on the selected genre.
