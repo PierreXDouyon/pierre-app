@@ -3,36 +3,22 @@
 
 // screen on first load
 describe("pierre-app.vue", () => {
-  // RecommendButton Component
-  describe("RecommendButton Component", () => {
-    it("should display a button", () => {
-      // Test if a button is visible.
-      // Vue.js Code: Use <button> tag to create the button element.
-    });
-  
-    it("should label the button as 'Recommend'", () => {
-      // Test if the button is labeled as 'Recommend'.
-      // Vue.js Code: Use the text "Recommend" inside the button.
-    });
-  });
-});
 
-  // MovieDetails Component
-  describe("MovieDetails Component", () => {
-   // screen on first load
-describe("pierre-app.vue", () => {
-  // RecommendButton Component
-  describe("RecommendButton Component", () => {
-    it("should display a button", () => {
-      // Test if a button is visible.
-      // Vue.js Code: Use <button> tag to create the button element.
-    });
-  
-    it("should label the button as 'Recommend'", () => {
-      // Test if the button is labeled as 'Recommend'.
-      // Vue.js Code: Use the text "Recommend" inside the button.
-    });
+// GenreSelector Component
+describe("GenreSelector Component", () => {
+  it("displays 'Pick a Genre' text and dropdown menu (Genres = action, romance, comedy, drama)", () => {
+    // Test if the component displays the "Pick a Genre" text and a dropdown menu.
+    // Vue.js Code: Use <p> and <select> tags to create the text and dropdown elements.
+    // Interaction: User sees the "Pick a Genre" text and can select a genre from the dropdown.
   });
+
+     // MovieList Component
+     describe("MovieList Component", () => {
+      it("should display three MovieDetails components stacked on top of each other", () => {
+        // Test if the MovieList component displays three MovieDetails components stacked on top of each other.
+        // Vue.js Code: Use v-for directive to render three MovieDetails components.
+        // Interaction: User sees three movie details components stacked.
+      });
 
   // MovieDetails Component
   describe("MovieDetails Component", () => {
@@ -71,11 +57,11 @@ describe("pierre-app.vue", () => {
       // Interaction: User clicks the button to view the movie's description.
     });
 
-    it("should display an example movie's title", () => {
-      // Test if the movie's title is displayed.
-      // Vue.js Code: Access the example movie's title from the passed props.
-      // Information Source: Example movie data passed as props.
-    });
+    // it("should display an example movie's title", () => {
+    //   // Test if the movie's title is displayed.
+    //   // Vue.js Code: Access the example movie's title from the passed props.
+    //   // Information Source: Example movie data passed as props.
+    // });
 
     // it("should display an example movie's genre", () => {
     //   // Test if the movie's genre is displayed.
@@ -95,10 +81,8 @@ describe("pierre-app.vue", () => {
     //   // Information Source: Example movie data passed as props.
     // });
   });
-  });
+});
 });
 
 
-
-
-
+});

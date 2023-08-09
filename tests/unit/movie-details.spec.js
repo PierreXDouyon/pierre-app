@@ -1,4 +1,4 @@
-// MovieDetails Component
+/// MovieDetails Component
 describe("MovieDetails Component", () => {
   // it("displays 'View Description' button under movie details", () => {
   //   // Test if the component displays the 'View Description' button under movie details.
