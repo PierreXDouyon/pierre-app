@@ -29,5 +29,4 @@ describe("MovieDetails Component", () => {
     // Vue.js Code: Simulate clicking a genre, then clicking it again to trigger an updated movie suggestion.
     // Interaction: Clicking the same genre again should result in a different movie suggestion.
   });
-  
 });
