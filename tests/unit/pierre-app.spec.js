@@ -28,18 +28,6 @@ describe("GenreSelector Component", () => {
       // Interaction: User sees movie details displayed on the screen.
     });
 
-    // it("should access and display specific movie details (title, genre, description etc.) from the array in props.movie-details", () => {
-    //   // Test if specific movie details (title, genre, release date, IMDB rating) are accessed from the array in app.vue and displayed.
-    //   // Vue.js Code: Access specific movie details from the array in app.vue and display them using props.
-    //   // Interaction: User sees specific movie details displayed on the screen.
-    // });
-
-    // it("should display a sample movie's image from array in props.movie-details", () => {
-    //   // Test if a sample movie's image is displayed.
-    //   // Vue.js Code: Access the example movie's image from the passed props.
-    //   // Information Source: Example movie data passed as props.
-    // });
-
     it("should hide(with movie description being set to false in the movie array)movie description initially", () => {
       // Test if the movie description is not visible initially with true and false test.
       // Vue.js Code: by default the descripyion value is false when clicked it becomes true.
@@ -56,33 +44,7 @@ describe("GenreSelector Component", () => {
       // Vue.js Code: Use a button with '@click' directive to emit a custom event.
       // Interaction: User clicks the button to view the movie's description.
     });
-
-    // it("should display an example movie's title", () => {
-    //   // Test if the movie's title is displayed.
-    //   // Vue.js Code: Access the example movie's title from the passed props.
-    //   // Information Source: Example movie data passed as props.
-    // });
-
-    // it("should display an example movie's genre", () => {
-    //   // Test if the movie's genre is displayed.
-    //   // Vue.js Code: Access the example movie's genre from the passed props.
-    //   // Information Source: Example movie data passed as props.
-    // });
-
-    // it("should display an example movie's release date", () => {
-    //   // Test if the movie's release date is displayed.
-    //   // Vue.js Code: Access the example movie's release date from the passed props.
-    //   // Information Source: Example movie data passed as props.
-    // });
-
-    // it("should display an example movie's IMDB rating", () => {
-    //   // Test if the movie's IMDB rating is displayed.
-    //   // Vue.js Code: Access the example movie's IMDB rating from the passed props.
-    //   // Information Source: Example movie data passed as props.
-    // });
   });
-});
-});
-
-
+ });
+  });
 });

@@ -1,23 +1,5 @@
 /// MovieDetails Component
 describe("MovieDetails Component", () => {
-  // it("displays 'View Description' button under movie details", () => {
-  //   // Test if the component displays the 'View Description' button under movie details.
-  //   // Vue.js Code: Use <button> tag to create the button element.
-  //   // Interaction: User sees the 'View Description' button under movie details.
-  // });
-
-  // it("hides movie description initially", () => {
-  //   // Test if the movie description is not visible initially.
-  //   // Vue.js Code: Use CSS or data properties to control visibility.
-  //   // Interaction: Movie description is hidden when the component loads.
-  // });
-
-  it("shows movie description when 'View Description' is clicked using $emit to toggle description visibility", () => {
-    // Test if clicking the "View Description" button emits a custom event to show the movie's description.
-    // Vue.js Code: Use a button with '@click' directive to emit a custom event.
-    // Interaction: User clicks the button to view the movie's description.
-  });
-
   it("displays movie details after a genre is clicked from the genre selector", () => {
     // Test if the component displays movie details after a genre is clicked.
     // Vue.js Code: Use props to pass example movie data to the component.
