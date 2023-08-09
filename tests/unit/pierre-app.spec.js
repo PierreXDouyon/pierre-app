@@ -18,23 +18,40 @@ describe("pierre-app.vue", () => {
 
   // MovieDetails Component
   describe("MovieDetails Component", () => {
-    it("should display movie details (image, title, genre, release date, IMDB rating) from an array in app.vue", () => {
+   // screen on first load
+describe("pierre-app.vue", () => {
+  // RecommendButton Component
+  describe("RecommendButton Component", () => {
+    it("should display a button", () => {
+      // Test if a button is visible.
+      // Vue.js Code: Use <button> tag to create the button element.
+    });
+  
+    it("should label the button as 'Recommend'", () => {
+      // Test if the button is labeled as 'Recommend'.
+      // Vue.js Code: Use the text "Recommend" inside the button.
+    });
+  });
+
+  // MovieDetails Component
+  describe("MovieDetails Component", () => {
+    it("should renders movie details (image, title, genre, release date, IMDB rating) from array in props.movie-details when passed", () => {
       // Test if movie details (image, title, genre, release date, IMDB rating) are retrieved from an array in app.vue and displayed.
       // Vue.js Code: Access movie details from the array in app.vue and display them using props.
       // Interaction: User sees movie details displayed on the screen.
     });
 
-    it("should access and display specific movie details (title, genre, description etc.) from the array", () => {
-      // Test if specific movie details (title, genre, release date, IMDB rating) are accessed from the array in app.vue and displayed.
-      // Vue.js Code: Access specific movie details from the array in app.vue and display them using props.
-      // Interaction: User sees specific movie details displayed on the screen.
-    });
+    // it("should access and display specific movie details (title, genre, description etc.) from the array in props.movie-details", () => {
+    //   // Test if specific movie details (title, genre, release date, IMDB rating) are accessed from the array in app.vue and displayed.
+    //   // Vue.js Code: Access specific movie details from the array in app.vue and display them using props.
+    //   // Interaction: User sees specific movie details displayed on the screen.
+    // });
 
-    it("should display a sample movie's image", () => {
-      // Test if a sample movie's image is displayed.
-      // Vue.js Code: Access the example movie's image from the passed props.
-      // Information Source: Example movie data passed as props.
-    });
+    // it("should display a sample movie's image from array in props.movie-details", () => {
+    //   // Test if a sample movie's image is displayed.
+    //   // Vue.js Code: Access the example movie's image from the passed props.
+    //   // Information Source: Example movie data passed as props.
+    // });
 
     it("should hide(with movie description being set to false in the movie array)movie description initially", () => {
       // Test if the movie description is not visible initially with true and false test.
@@ -47,9 +64,9 @@ describe("pierre-app.vue", () => {
       // Interaction: User sees the 'View Description' button under movie details.
     });
 
-    it("should show movie description when 'View Description' is clicked", () => {
-      // Test if clicking the "View Description" button displays the movie's description.
-      // Vue.js Code: Use a button with '@click' directive to toggle description visibility.
+    it("should show movie description from the array in props.movie-details when 'View Description' is clicked using $emit to toggle description visibility", () => {
+      // Test if clicking the "View Description" button emits a custom event to show the movie's description.
+      // Vue.js Code: Use a button with '@click' directive to emit a custom event.
       // Interaction: User clicks the button to view the movie's description.
     });
 
@@ -76,7 +93,9 @@ describe("pierre-app.vue", () => {
     //   // Vue.js Code: Access the example movie's IMDB rating from the passed props.
     //   // Information Source: Example movie data passed as props.
     // });
+  });
 });
+  });
 
 // RecommendButton Component
 describe("RecommendButton Component", () => {
@@ -112,9 +131,9 @@ describe("RecommendButton Component", () => {
   //   // Interaction: After selecting a genre, the genre selector becomes hidden.
   // });
 
-  it("should access the movie details array and apply Math.random to generate a random movie suggestion after a genre has been clicked", async () => {
-    // Test if the component accesses the movie details array based on the selected genre.
-    // Vue.js Code: Use the selected genre to filter the movie details array.
+  it("should access the movie details array from app.vue and apply Math.random to generate a random movie suggestion after a genre has been clicked", async () => {
+    // Test if the component accesses the movie details array from app.vue based on the selected genre.
+    // Vue.js Code: Use the selected genre to filter the movie details array from app.vue.
     // Interaction: User selects a genre, component generates a random movie suggestion.
   });
 });
@@ -133,11 +152,11 @@ describe("MovieDetails Component", () => {
   //   // Interaction: Movie description is hidden when the component loads.
   // });
 
-  // it("shows movie description when 'View Description' button is clicked", () => {
-  //   // Test if clicking the "View Description" button displays the movie's description.
-  //   // Vue.js Code: Use a button with '@click' directive to toggle description visibility.
-  //   // Interaction: User clicks the button to view the movie's description.
-  // });
+  it("shows movie description when 'View Description' is clicked using $emit to toggle description visibility", () => {
+    // Test if clicking the "View Description" button emits a custom event to show the movie's description.
+    // Vue.js Code: Use a button with '@click' directive to emit a custom event.
+    // Interaction: User clicks the button to view the movie's description.
+  });
 
   it("displays movie details after a genre is clicked from the genre selector", () => {
     // Test if the component displays movie details after a genre is clicked.
@@ -145,9 +164,9 @@ describe("MovieDetails Component", () => {
     // Interaction: User sees movie details after selecting a genre.
   });
 
-  it("should access the movie details array based on the selected genre to create a filtered array", () => {
-    // Test if the component accesses the movie details array based on the selected genre.
-    // Vue.js Code: Use the selected genre to filter the movie details array.
+  it("should access the movie details array from app.vue based on the selected genre to create a filtered array", () => {
+    // Test if the component accesses the movie details array from app.vue based on the selected genre.
+    // Vue.js Code: Use the selected genre to filter the movie details array from app.vue.
     // Interaction: Component retrieves movie details based on the selected genre.
   });
 
@@ -157,134 +176,18 @@ describe("MovieDetails Component", () => {
     // Interaction: Component generates a random movie suggestion from the filtered array.
   });
 
-  it("updates movie suggestion with new click of the recommend button", () => {
-    // Test if clicking the "Recommend" button again provides a different movie suggestion.
-    // Vue.js Code: Modify the picking function to update with each new click.
-    // Interaction: Subsequent button clicks trigger updated movie suggestions.
+  it("updates movie suggestion when 'Recommend' button is clicked and a subsequent genre is clicked", () => {
+    // Test if clicking the "Recommend" button and then clicking a subsequent genre
+    // provides a different movie suggestion.
+    // Vue.js Code: Modify the picking function to update after a new genre is selected.
+    // Interaction: Click "Recommend" button, select a genre, and observe updated movie suggestions.
   });
-
-  // it("displays an image of the selected movie using JavaScript code", () => {
-  //   // Test if the component displays an image of the selected movie using JavaScript.
-  //   // Vue.js Code: Use the selected genre's name and Math.random to display an image.
-  //   // Interaction: User sees an image of the selected movie in the component.
-  // });
+  
+  it("updates movie suggestion with new click of the recommend button after a genre is clicked", () => {
+    // Test if clicking the "Recommend" button again after a genre is clicked provides a different movie suggestion.
+    // Vue.js Code: Modify the picking function to update with each new click.
+    // Interaction: Click "Recommend" button, observe initial movie suggestion, click a genre,
+    // click "Recommend" button again, and observe updated movie suggestion.
+  });
 });
 
-
-// when you click recommend movie 
-// 1 it will find a random id 
-// 2 it rill bring the object with this id 
-// 3 it will display the object movie details component
-
-
-
-+-----------------------------------+
-|             App Screen            |
-+-----------------------------------+
-|                                   |
-|     [ Recommend ]                 |
-|                                   |
-+-----------------------------------+
-|            Genre Selector         |
-+-----------------------------------+
-|                                   |
-|   Pick a Genre:                   |
-|   [ Action ]                      |
-|   [ Romance ]                     |
-|   [ Comedy ]                      |
-|   [ Drama ]                       |
-|                                   |
-+-----------------------------------+
-|        Movie Details              |
-+-----------------------------------+
-|          Image                    |
-|   Title:      Love Movie          |
-|   Genre:      Romance             |
-|   Release:    Jan 1, 2023         |
-|   Rating:     8.5                 |
-|                                   |
-|       [ View Description ]        |
-|                                   |
-+-----------------------------------+
-|            Description            |
-+-----------------------------------+
-|                                   |
-|   This is a sample movie          |
-|   description. Lorem ipsum dolor  |
-|   sit amet, consectetur           |
-|   adipiscing elit.                |
-|                                   |
-+-----------------------------------+
-
-Screen on First Load:
-----------------------
-[Recommend Button]
-  |
-  v
-[Movie Details]
-  |
-  v
-[View Description Button] (Hidden)
-  |
-  v
-[Movie Description] (Hidden)
-
-User Interactions:
-------------------
-Click [Recommend Button]
-  |
-  v
-[Genre Selector]
-  |
-  v
-Select Genre
-  |
-  v
-[Movie Details]
-  |
-  v
-Click [View Description Button]
-  |
-  v
-[Movie Description]
-
-Genre Selector:
----------------
-[Pick a Genre Text]
-  |
-  v
-[Dropdown Menu]
-  |
-  v
-Click [Select Genre Button]
-  |
-  v
-[Random Movie Suggestion]
-
-Movie Details:
---------------
-[Movie Image]
-  |
-  v
-[Movie Title]
-  |
-  v
-[Movie Genre]
-  |
-  v
-[Movie Release Date]
-  |
-  v
-[Movie IMDB Rating]
-  |
-  v
-Click [View Description Button]
-  |
-  v
-[Movie Description]
-  |
-  v
-Click [Recommend Button]
-  |
-  v
-[Random Movie Suggestion]
