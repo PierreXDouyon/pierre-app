@@ -18,17 +18,10 @@ describe("MovieDetails Component", () => {
     // Interaction: Component generates a random movie suggestion from the filtered array.
   });
 
-  it("updates movie suggestion when 'Recommend' button is clicked and a subsequent genre is clicked", () => {
-    // Test if clicking the "Recommend" button and then clicking a subsequent genre
-    // provides a different movie suggestion.
-    // Vue.js Code: Modify the picking function to update after a new genre is selected.
-    // Interaction: Click "Recommend" button, select a genre, and observe updated movie suggestions.
+  it("updates movie suggestion when a genre is clicked again", () => {
+    // Test if clicking a genre again updates the movie suggestion.
+    // Vue.js Code: Simulate clicking a genre, then clicking it again to trigger an updated movie suggestion.
+    // Interaction: Clicking the same genre again should result in a different movie suggestion.
   });
   
-  it("updates movie suggestion with new click of the recommend button after a genre is clicked", () => {
-    // Test if clicking the "Recommend" button again after a genre is clicked provides a different movie suggestion.
-    // Vue.js Code: Modify the picking function to update with each new click.
-    // Interaction: Click "Recommend" button, observe initial movie suggestion, click a genre,
-    // click "Recommend" button again, and observe updated movie suggestion.
-  });
 });
