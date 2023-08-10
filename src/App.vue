@@ -147,10 +147,25 @@ export default {
   },
   computed: {
     filteredMovies() {
+      let filteredArray = [];
       if (!this.selectedGenre) {
-        return this.movies.slice(0, 3); // Display the first three movies by default
+        filteredArray = this.movies.slice(0, 3); // Display the first three movies by default
+      } else {
+        filteredArray = this.movies.filter((movie) => {
+          return movie.genre.toLowerCase() === this.selectedGenre.toLowerCase(); // filter the array data with selected genre lowercase
+        });
       }
-      return this.movies.filter((movie) => movie.genre === this.selectedGenre);
+
+      // Shuffle the filtered array to get a random order
+      for (let i = filteredArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredArray[i], filteredArray[j]] = [
+          filteredArray[j],
+          filteredArray[i],
+        ];
+      }
+
+      return filteredArray; // return the filtered movies
     },
   },
   methods: {
@@ -163,31 +178,4 @@ export default {
 
 <style lang="scss">
 /* Your styles here */
-.movie-details {
-  padding: 20px 0 50px 0;
-  display: grid;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .movie-details {
-    img {
-      width: 600px;
-      height: 400px;
-    }
-
-    button {
-      height: 200%;
-      width: 50%;
-      display: flex;
-      /* text-align: center; */
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-    }
-  }
-}
 </style>
