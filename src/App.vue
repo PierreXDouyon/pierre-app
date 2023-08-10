@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <h1>My Movie App</h1>
-    <GenreSelector :genres="genres" @selectGenre="handleSelectGenre" />
-    <MovieList :movies="filteredMovies" />
+    <GenreSelector
+      :genres="genres"
+      :selectedGenre="selectedGenre"
+      :selectGenre="handleSelectGenre"
+    />
+    <MovieList :movies="filteredMovies" :selectedGenre="selectedGenre" />
   </div>
 </template>
 

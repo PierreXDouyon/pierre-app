@@ -17,11 +17,8 @@ export default {
       type: Array,
       required: true,
     },
-  },
-  methods: {
-    selectGenre(genre) {
-      this.$emit("selectGenre", genre);
-    },
+    selectedGenre: String, // Pass the selected genre as a prop
+    selectGenre: Function, // Pass the selectGenre function as a prop
   },
 };
 </script>

@@ -25,10 +25,8 @@ describe("MovieDetails Component", () => {
 
     const movieTitle = wrapper.find("h2").text();
     expect(movieTitle).toBe(movie.title);
-
   });
 });
-
 
 // /// MovieDetails Component
 // describe("MovieDetails Component", () => {
@@ -37,9 +35,9 @@ describe("MovieDetails Component", () => {
 //     // Vue.js Code: Access movie details from the array in app.vue and display them using props.
 //     // Interaction: User sees movie details displayed on the screen.
 //   });
-// // 
-// // 
-// // 
+// //
+// //
+// //
 //   it("displays movie details after a genre is clicked from the genre selector", () => {
 //     // Test if the component displays movie details after a genre is clicked.
 //     // Vue.js Code: Use props to pass example movie data to the component.

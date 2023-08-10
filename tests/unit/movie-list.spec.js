@@ -16,7 +16,6 @@ describe("MovieList Component", () => {
   });
 });
 
-
 // // MovieList Component
 // describe("MovieList Component", () => {
 //   it("should display three MovieDetails components stacked on top of each other", () => {

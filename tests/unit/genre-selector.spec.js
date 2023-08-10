@@ -33,9 +33,9 @@ describe("GenreSelector Component", () => {
 //     // Vue.js Code: Use <p> and <select> tags to create the text and dropdown elements.
 //     // Interaction: User sees the "Pick a Genre" text and can select a genre from the dropdown.
 //   });
-//   // 
-//   // 
-//   // 
+//   //
+//   //
+//   //
 
 //   it("should access the movie details array from app.vue and apply Math.random to generate a random movie suggestion after a genre has been clicked", async () => {
 //     // Test if the component accesses the movie details array from app.vue based on the selected genre.

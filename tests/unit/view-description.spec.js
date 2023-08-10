@@ -16,7 +16,7 @@ describe("ViewDescription Component", () => {
         },
       },
     });
-  
+
     const viewDescriptionButton = wrapper.find("button");
     expect(viewDescriptionButton.text()).toBe("View Description");
   });
@@ -43,7 +43,6 @@ describe("ViewDescription Component", () => {
   });
 });
 
-
 // /// ViewDescription Component
 // describe("ViewDescription Component", () => {
 //   it("should display 'View Description' button under movie details", () => {
@@ -56,9 +55,9 @@ describe("ViewDescription Component", () => {
 //     // Test if the movie description is not visible initially with true and false test.
 //     // Vue.js Code: by default the description value is false when clicked it becomes true.
 //   });
-// // 
-// // 
-// // 
+// //
+// //
+// //
 //   it("should show movie description from the array in props.movie-details when 'View Description' is clicked using $emit to toggle description visibility", () => {
 //     // Test if clicking the "View Description" button emits a custom event to show the movie's description.
 //     // Vue.js Code: Use a button with '@click' directive to emit a custom event.

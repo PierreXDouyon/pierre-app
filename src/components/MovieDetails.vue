@@ -1,4 +1,5 @@
 <template>
+  <div class="movie-details" v-if="movie.genre === selectedGenre"></div>
   <div class="movie-details">
     <img :src="movie.image" alt="Movie Poster" />
     <h2>{{ movie.title }}</h2>
