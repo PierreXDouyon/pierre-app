@@ -1,3 +1,49 @@
+import { mount } from "@vue/test-utils";
+import ViewDescription from "@/components/ViewDescription.vue";
+
+describe("ViewDescription Component", () => {
+  it("displays 'View Description' button", () => {
+    const wrapper = mount(ViewDescription, {
+      propsData: {
+        movie: {
+          id: null,
+          title: "",
+          image: "",
+          genre: "",
+          releaseDate: "",
+          imdbRating: null,
+          description: "",
+        },
+      },
+    });
+  
+    const viewDescriptionButton = wrapper.find("button");
+    expect(viewDescriptionButton.text()).toBe("View Description");
+  });
+
+  it("toggles movie description when button is clicked", async () => {
+    const movie = {
+      id: 1,
+      title: "Movie 1",
+      image: "https://placehold.co/300x200",
+      genre: "Action",
+      releaseDate: "2022-01-01",
+      imdbRating: 7.5,
+      description: "This is the description for Movie 1.",
+    };
+    const wrapper = mount(ViewDescription, {
+      propsData: { movie },
+    });
+
+    await wrapper.find("button").trigger("click");
+    expect(wrapper.vm.showDescription).toBe(true);
+
+    await wrapper.find("button").trigger("click");
+    expect(wrapper.vm.showDescription).toBe(false);
+  });
+});
+
+
 // /// ViewDescription Component
 // describe("ViewDescription Component", () => {
 //   it("should display 'View Description' button under movie details", () => {
