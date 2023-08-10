@@ -1,3 +1,31 @@
+import { mount } from "@vue/test-utils";
+import GenreSelector from "@/components/GenreSelector.vue";
+
+describe("GenreSelector Component", () => {
+  it("displays 'Select a Genre' text and genre options", () => {
+    // Given
+    const genres = ["action", "romance", "comedy", "drama"];
+
+    // When
+    const wrapper = mount(GenreSelector, {
+      propsData: { genres },
+    });
+
+    // Then
+    // Check if the 'Select a Genre' text is displayed correctly
+    const selectGenreText = wrapper.find("p").text();
+    expect(selectGenreText).toBe("Select a Genre:");
+
+    // Check if each genre option is displayed correctly
+    const genreOptions = wrapper.findAll("li");
+    genreOptions.forEach((option, index) => {
+      const expectedGenre = genres[index];
+      const actualGenre = option.text();
+      expect(actualGenre).toBe(expectedGenre);
+    });
+  });
+});
+
 // // GenreSelector Component
 // describe("GenreSelector Component", () => {
 //   it("displays 'Pick a Genre' text and menu of genres (Genres = action, romance, comedy, drama)", () => {
