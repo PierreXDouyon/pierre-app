@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      genres: ["action", "romance", "comedy", "drama"],
+      genres: ["Action", "Romance", "Comedy", "Drama"],
       movies: [
         {
           id: 1,
@@ -152,7 +152,7 @@ export default {
         filteredArray = this.movies.slice(0, 3); // Display the first three movies by default
       } else {
         filteredArray = this.movies.filter((movie) => {
-          return movie.genre.toLowerCase() === this.selectedGenre.toLowerCase(); // filter the array data with selected genre lowercase
+          return movie.genre === this.selectedGenre; // filter the array data with selected genre
         });
       }
 
