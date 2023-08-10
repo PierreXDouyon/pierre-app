@@ -6,7 +6,7 @@
       :selectedGenre="selectedGenre"
       :selectGenre="handleSelectGenre"
     />
-    <MovieList :movies="filteredMovies" />
+    <MovieList :movies="filteredMovies" :selectedGenre="selectedGenre" />
   </div>
 </template>
 
@@ -163,4 +163,31 @@ export default {
 
 <style lang="scss">
 /* Your styles here */
+.movie-details {
+  padding: 20px 0 50px 0;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-details {
+    img {
+      width: 600px;
+      height: 400px;
+    }
+
+    button {
+      height: 200%;
+      width: 50%;
+      display: flex;
+      /* text-align: center; */
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  }
+}
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="movie-list">
     <MovieDetails
-      v-for="movie in filteredMovies"
+      v-for="movie in movies"
       :key="movie.id"
       :movie="movie"
-    />
+    ></MovieDetails>
   </div>
 </template>
 
