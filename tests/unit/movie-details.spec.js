@@ -1,3 +1,35 @@
+import { mount } from "@vue/test-utils";
+import MovieDetails from "@/components/MovieDetails.vue";
+import ViewDescription from "@/components/ViewDescription.vue";
+
+describe("MovieDetails Component", () => {
+  it("displays movie details from props", () => {
+    const movie = {
+      id: 1,
+      title: "Movie 1",
+      image: "https://placehold.co/300x200",
+      genre: "Action",
+      releaseDate: "2022-01-01",
+      imdbRating: 7.5,
+      description: "This is the description for Movie 1.",
+    };
+
+    const wrapper = mount(MovieDetails, {
+      propsData: { movie },
+      global: {
+        components: {
+          ViewDescription,
+        },
+      },
+    });
+
+    const movieTitle = wrapper.find("h2").text();
+    expect(movieTitle).toBe(movie.title);
+
+  });
+});
+
+
 // /// MovieDetails Component
 // describe("MovieDetails Component", () => {
 //   it("should renders movie details (image, title, genre, release date, IMDB rating) from array in props.movie-details when passed", () => {
