@@ -6,7 +6,7 @@
       :selectedGenre="selectedGenre"
       :selectGenre="handleSelectGenre"
     />
-    <MovieList :movies="filteredMovies" :selectedGenre="selectedGenre" />
+    <MovieList :movies="filteredMovies" />
   </div>
 </template>
 
