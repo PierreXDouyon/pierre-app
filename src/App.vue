@@ -23,6 +23,7 @@ export default {
         {
           id: 1,
           title: "Movie 1",
+          image: "https://placehold.co/300x200",
           genre: "Action",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -31,6 +32,7 @@ export default {
         {
           id: 2,
           title: "Movie 2",
+          image: "https://placehold.co/300x200",
           genre: "Romance",
           releaseDate: "2022-02-15",
           imdbRating: 8.0,
@@ -39,6 +41,7 @@ export default {
         {
           id: 3,
           title: "Movie 3",
+          image: "https://placehold.co/300x200",
           genre: "Comedy",
           releaseDate: "2022-03-30",
           imdbRating: 7.2,
@@ -47,6 +50,7 @@ export default {
         {
           id: 4,
           title: "Movie 4",
+          image: "https://placehold.co/300x200",
           genre: "Action",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -55,6 +59,7 @@ export default {
         {
           id: 5,
           title: "Movie 5",
+          image: "https://placehold.co/300x200",
           genre: "Comedy",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -63,6 +68,7 @@ export default {
         {
           id: 6,
           title: "Movie 6",
+          image: "https://placehold.co/300x200",
           genre: "Drama",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -71,6 +77,7 @@ export default {
         {
           id: 7,
           title: "Movie 7",
+          image: "https://placehold.co/300x200",
           genre: "Action",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -79,6 +86,7 @@ export default {
         {
           id: 8,
           title: "Movie 8",
+          image: "https://placehold.co/300x200",
           genre: "Action",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -87,6 +95,7 @@ export default {
         {
           id: 9,
           title: "Movie 9",
+          image: "https://placehold.co/300x200",
           genre: "Comedy",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -95,6 +104,7 @@ export default {
         {
           id: 10,
           title: "Movie 10",
+          image: "https://placehold.co/300x200",
           genre: "Drama",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -103,6 +113,7 @@ export default {
         {
           id: 11,
           title: "Movie 1",
+          image: "https://placehold.co/300x200",
           genre: "Drama",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -111,6 +122,7 @@ export default {
         {
           id: 12,
           title: "Movie 12",
+          image: "https://placehold.co/300x200",
           genre: "Romanace",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
@@ -119,6 +131,7 @@ export default {
         {
           id: 13,
           title: "Movie 13",
+          image: "https://placehold.co/300x200",
           genre: "Romance",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
