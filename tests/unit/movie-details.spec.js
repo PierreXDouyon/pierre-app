@@ -26,6 +26,36 @@ describe("MovieDetails Component", () => {
     const movieTitle = wrapper.find("h2").text();
     expect(movieTitle).toBe(movie.title);
   });
+
+  it("emits 'toggle-description' event when View Description button is clicked", async () => {
+    const movie = {
+      id: 1,
+      title: "Movie 1",
+      image: "https://placehold.co/300x200",
+      genre: "Action",
+      releaseDate: "2022-01-01",
+      imdbRating: 7.5,
+      description: "This is the description for Movie 1.",
+    };
+
+    const wrapper = mount(MovieDetails, {
+      propsData: { movie },
+      global: {
+        components: {
+          ViewDescription,
+        },
+      },
+    });
+
+    // Access the child component instance
+    const viewDescriptionComponent = wrapper.findComponent(ViewDescription);
+
+    // Trigger the toggleDescription method directly on the child component
+    await viewDescriptionComponent.vm.toggleDescription();
+
+    // Expect the 'toggle-description' event to be emitted
+    expect(wrapper.emitted()["toggle-description"]).toBeTruthy();
+  });
 });
 
 // /// MovieDetails Component

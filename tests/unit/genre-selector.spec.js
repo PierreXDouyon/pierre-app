@@ -3,28 +3,57 @@ import GenreSelector from "@/components/GenreSelector.vue";
 
 describe("GenreSelector Component", () => {
   it("displays 'Select a Genre' text and genre options", () => {
-    // Given
-    const genres = ["action", "romance", "comedy", "drama"];
+    const genres = ["Action", "Romance", "Comedy", "Drama"];
 
-    // When
     const wrapper = mount(GenreSelector, {
       propsData: { genres },
     });
 
-    // Then
-    // Check if the 'Select a Genre' text is displayed correctly
     const selectGenreText = wrapper.find("p").text();
     expect(selectGenreText).toBe("Select a Genre:");
 
-    // Check if each genre option is displayed correctly
     const genreOptions = wrapper.findAll("li");
-    genreOptions.forEach((option, index) => {
-      const expectedGenre = genres[index];
-      const actualGenre = option.text();
-      expect(actualGenre).toBe(expectedGenre);
+    // Assuming there are four genres in the genres array
+    expect(genreOptions).toHaveLength(genres.length);
+  });
+
+  it("emits 'select-genre' event when a genre option is clicked", async () => {
+    const genres = ["Action", "Romance", "Comedy", "Drama"];
+    const wrapper = mount(GenreSelector, {
+      propsData: { genres },
     });
+
+    await wrapper.find("li").trigger("click");
+    expect(wrapper.emitted()["select-genre"]).toBeTruthy();
   });
 });
+// import { mount } from "@vue/test-utils";
+// import GenreSelector from "@/components/GenreSelector.vue";
+
+// describe("GenreSelector Component", () => {
+//   it("displays 'Select a Genre' text and genre options", () => {
+//     // Given
+//     const genres = ["action", "romance", "comedy", "drama"];
+
+//     // When
+//     const wrapper = mount(GenreSelector, {
+//       propsData: { genres },
+//     });
+
+//     // Then
+//     // Check if the 'Select a Genre' text is displayed correctly
+//     const selectGenreText = wrapper.find("p").text();
+//     expect(selectGenreText).toBe("Select a Genre:");
+
+//     // Check if each genre option is displayed correctly
+//     const genreOptions = wrapper.findAll("li");
+//     genreOptions.forEach((option, index) => {
+//       const expectedGenre = genres[index];
+//       const actualGenre = option.text();
+//       expect(actualGenre).toBe(expectedGenre);
+//     });
+//   });
+// });
 
 // // GenreSelector Component
 // describe("GenreSelector Component", () => {

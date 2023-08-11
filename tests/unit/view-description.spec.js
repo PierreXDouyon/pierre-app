@@ -41,8 +41,25 @@ describe("ViewDescription Component", () => {
     await wrapper.find("button").trigger("click");
     expect(wrapper.vm.showDescription).toBe(false);
   });
-});
 
+  it("emits 'toggle-description' event when button is clicked", async () => {
+    const movie = {
+      id: 1,
+      title: "Movie 1",
+      image: "https://placehold.co/300x200",
+      genre: "Action",
+      releaseDate: "2022-01-01",
+      imdbRating: 7.5,
+      description: "This is the description for Movie 1.",
+    };
+    const wrapper = mount(ViewDescription, {
+      propsData: { movie },
+    });
+
+    await wrapper.find("button").trigger("click");
+    expect(wrapper.emitted()["toggle-description"]).toBeTruthy();
+  });
+});
 // /// ViewDescription Component
 // describe("ViewDescription Component", () => {
 //   it("should display 'View Description' button under movie details", () => {

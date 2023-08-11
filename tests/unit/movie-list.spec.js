@@ -5,17 +5,25 @@ import MovieDetails from "@/components/MovieDetails.vue";
 describe("MovieList Component", () => {
   it("displays multiple MovieDetails components", () => {
     const movies = [
-      // Your sample movie data here
+      {
+        id: 1,
+        title: "Movie 1",
+        image: "https://placehold.co/300x200",
+        genre: "Action",
+        releaseDate: "2022-01-01",
+        imdbRating: 7.5,
+        description: "This is the description for Movie 1.",
+      },
     ];
     const wrapper = mount(MovieList, {
       propsData: { movies },
     });
 
     const movieDetails = wrapper.findAllComponents(MovieDetails);
+    // Expecting three MovieDetails components
     expect(movieDetails).toHaveLength(movies.length);
   });
 });
-
 // // MovieList Component
 // describe("MovieList Component", () => {
 //   it("should display three MovieDetails components stacked on top of each other", () => {
