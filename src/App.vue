@@ -179,7 +179,7 @@ export default {
         ];
       }
 
-      return filteredArray.slice(0, 3); // return the filtered movies
+      return filteredArray.slice(0, 4); // return the filtered movies
     },
   },
   methods: {
