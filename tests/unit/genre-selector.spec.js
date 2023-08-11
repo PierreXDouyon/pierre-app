@@ -1,32 +1,61 @@
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import GenreSelector from "@/components/GenreSelector.vue";
 
-describe("GenreSelector Component", () => {
-  it("displays 'Select a Genre' text and genre options", () => {
+describe("GenreSelector.vue", () => {
+  it("displays genres and triggers selectGenre on click", async () => {
     const genres = ["Action", "Romance", "Comedy", "Drama"];
+    const selectedGenre = "action";
+    const selectGenre = jest.fn();
 
-    const wrapper = mount(GenreSelector, {
-      propsData: { genres },
+    const wrapper = shallowMount(GenreSelector, {
+      props: {
+        genres,
+        selectedGenre,
+        selectGenre,
+      },
     });
 
-    const selectGenreText = wrapper.find("p").text();
-    expect(selectGenreText).toBe("Select a Genre:");
+    // Check if genres are displayed
+    const genreItems = wrapper.findAll("li");
+    expect(genreItems.length).toBe(genres.length);
 
-    const genreOptions = wrapper.findAll("li");
-    // Assuming there are four genres in the genres array
-    expect(genreOptions).toHaveLength(genres.length);
-  });
+    // Simulate clicking on a genre
+    await genreItems.at(1).trigger("click");
 
-  it("emits 'select-genre' event when a genre option is clicked", async () => {
-    const genres = ["Action", "Romance", "Comedy", "Drama"];
-    const wrapper = mount(GenreSelector, {
-      propsData: { genres },
-    });
-
-    await wrapper.find("li").trigger("click");
-    expect(wrapper.emitted()["select-genre"]).toBeTruthy();
+    // Check if selectGenre function was called with the correct genre
+    expect(selectGenre).toHaveBeenCalledWith("Romance");
   });
 });
+
+// import { mount } from "@vue/test-utils";
+// import GenreSelector from "@/components/GenreSelector.vue";
+
+// describe("GenreSelector Component", () => {
+//   it("displays 'Select a Genre' text and genre options", () => {
+//     const genres = ["Action", "Romance", "Comedy", "Drama"];
+
+//     const wrapper = mount(GenreSelector, {
+//       propsData: { genres },
+//     });
+
+//     const selectGenreText = wrapper.find("p").text();
+//     expect(selectGenreText).toBe("Select a Genre:");
+
+//     const genreOptions = wrapper.findAll("li");
+//     // Assuming there are four genres in the genres array
+//     expect(genreOptions).toHaveLength(genres.length);
+//   });
+
+//   it("emits 'select-genre' event when a genre option is clicked", async () => {
+//     const genres = ["Action", "Romance", "Comedy", "Drama"];
+//     const wrapper = mount(GenreSelector, {
+//       propsData: { genres },
+//     });
+
+//     await wrapper.find("li").trigger("click");
+//     expect(wrapper.emitted()["select-genre"]).toBeTruthy();
+//   });
+// });
 // import { mount } from "@vue/test-utils";
 // import GenreSelector from "@/components/GenreSelector.vue";
 

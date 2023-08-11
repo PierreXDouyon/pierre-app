@@ -9,7 +9,10 @@
     <MovieList :movies="filteredMovies" :selectedGenre="selectedGenre" />
   </div>
 </template>
-
+<!--pass genres array + selectedGenre as props to genreselector, 
+pass handleSelectGenre method as prop to genreselector, 
+pass the filteredMovies array as a prop to MovieList, 
+pass the selectedGenre data as a prop to MovieList -->
 <script>
 import GenreSelector from "./components/GenreSelector.vue";
 import MovieList from "./components/MovieList.vue";
@@ -156,12 +159,14 @@ export default {
         });
       }
 
-      // Shuffle the filtered array to get a random order
+      // Shuffle the filtered array to get a random order, like palindrome, Swap elements at indices 'i' and 'j' to shuffle the array
       for (let i = filteredArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [filteredArray[i], filteredArray[j]] = [
           filteredArray[j],
+          // temp store element at index j
           filteredArray[i],
+          // place  element at index i to index j
         ];
       }
 
@@ -172,10 +177,37 @@ export default {
     handleSelectGenre(genre) {
       this.selectedGenre = genre;
     },
+    // updates the selectedGenre data with the provided genre
   },
 };
 </script>
 
 <style lang="scss">
-/* Your styles here */
+.movie-details {
+  padding: 20px 0 50px 0;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-details {
+    img {
+      width: 600px;
+      height: 400px;
+    }
+
+    button {
+      height: 200%;
+      width: 50%;
+      display: flex;
+      /* text-align: center; */
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  }
+}
 </style>
