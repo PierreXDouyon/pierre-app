@@ -60,6 +60,33 @@ describe("ViewDescription.vue", () => {
   });
 });
 
+it("changes button text when description is visible", async () => {
+  const movie = {
+    id: 3,
+    title: "Movie 3",
+    image: "https://placehold.co/300x200",
+    genre: "Comedy",
+    releaseDate: "2022-03-30",
+    imdbRating: 7.5,
+    description: "This is the description for Movie 3.",
+  };
+
+  const wrapper = shallowMount(ViewDescription, {
+    props: {
+      movie,
+    },
+  });
+
+  // Initial state
+  expect(wrapper.find("button").text()).toBe("View Description");
+
+  // Click the button to show description
+  await wrapper.find("button").trigger("click");
+
+  // Check if button text is changed after clicking the button
+  expect(wrapper.find("button").text()).toBe("Hide Description");
+});
+
 // import { mount } from "@vue/test-utils";
 // import ViewDescription from "@/components/ViewDescription.vue";
 
