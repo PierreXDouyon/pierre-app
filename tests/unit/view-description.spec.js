@@ -1,65 +1,51 @@
 import { shallowMount } from "@vue/test-utils";
-import ViewDescription from "@/components/ViewDescription.vue";
+import GenreSelector from "@/components/GenreSelector.vue";
 
-describe("ViewDescription.vue", () => {
-  it("displays movie description when showDescription is true", async () => {
-    const movie = {
-      id: 1,
-      title: "Movie 1",
-      image: "https://placehold.co/300x200",
-      genre: "Action",
-      releaseDate: "2022-01-01",
-      imdbRating: 7.5,
-      description: "This is the description for Movie 1.",
-    };
+describe("GenreSelector.vue", () => {
+  it("displays genres", () => {
+    const genres = ["Action", "Romance", "Comedy", "Drama"];
+    const selectedGenre = "Action";
+    const selectGenre = jest.fn();
 
-    const wrapper = shallowMount(ViewDescription, {
+    const wrapper = shallowMount(GenreSelector, {
       props: {
-        movie,
+        genres,
+        selectedGenre,
+        selectGenre,
       },
     });
 
-    // Click the button to toggle description
-    await wrapper.find("button").trigger("click");
+    // Check if genres are displayed
+    const genreItems = wrapper.findAll("li");
+    expect(genreItems.length).toBe(genres.length);
 
-    // Check if description is displayed after clicking the button
-    expect(wrapper.find(".movie-description p").text()).toBe(movie.description);
+    // Verify the displayed genre texts
+    genreItems.forEach((genreItem, index) => {
+      expect(genreItem.text()).toBe(genres[index]);
+    });
   });
 
-  it("toggles description visibility when button is clicked", async () => {
-    const movie = {
-      id: 2,
-      title: "Movie 2",
-      image: "https://placehold.co/300x200",
-      genre: "Romance",
-      releaseDate: "2022-02-15",
-      imdbRating: 8.0,
-      description: "This is the description for Movie 2.",
-    };
+  it("triggers selectGenre on click", async () => {
+    const genres = ["Action", "Romance", "Comedy", "Drama"];
+    const selectedGenre = "Action";
+    const selectGenre = jest.fn();
 
-    const wrapper = shallowMount(ViewDescription, {
+    const wrapper = shallowMount(GenreSelector, {
       props: {
-        movie,
+        genres,
+        selectedGenre,
+        selectGenre,
       },
     });
 
-    // Initial state
-    expect(wrapper.vm.showDescription).toBe(false);
-
-    // Click the button to show description
-    await wrapper.find("button").trigger("click");
-
-    // Check if showDescription is true after clicking the button
-    expect(wrapper.vm.showDescription).toBe(true);
-
-    // Click the button again to hide description
-    await wrapper.find("button").trigger("click");
-
-    // Check if showDescription is false after clicking the button again
-    expect(wrapper.vm.showDescription).toBe(false);
+    // Simulate clicking on each genre
+    const genreItems = wrapper.findAll("li");
+    for (let index = 0; index < genres.length; index++) {
+      await genreItems.at(index).trigger("click");
+      expect(selectGenre).toHaveBeenCalledWith(genres[index]);
+    }
   });
 });
-
 // import { mount } from "@vue/test-utils";
 // import ViewDescription from "@/components/ViewDescription.vue";
 

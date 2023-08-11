@@ -192,6 +192,21 @@ export default {
   margin: auto;
 }
 
+h1,
+.genre-selector {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  ul {
+    padding: initial;
+  }
+  li {
+    list-style-type: none;
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .movie-details {
     img {
