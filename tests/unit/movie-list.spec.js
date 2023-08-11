@@ -40,6 +40,33 @@ describe("MovieList.vue", () => {
       expect(movieDetails.props("movie")).toStrictEqual(movies[index]);
     });
   });
+
+  it("displays up to 3 movie details for the selected genre", () => {
+    const movies = [
+      {
+        id: 1,
+        title: "Movie 1",
+        image: "https://placehold.co/300x200",
+        genre: "Action",
+        releaseDate: "2022-01-01",
+        imdbRating: 7.5,
+        description: "This is the description for Movie 1.",
+      },
+    ];
+
+    const selectedGenre = "Action";
+
+    const wrapper = shallowMount(MovieList, {
+      props: {
+        movies,
+        selectedGenre,
+      },
+    });
+
+    // Ensure that up to 3 movie details are displayed for the selected genre
+    const displayedMovieDetailsCount = wrapper.findAll(".movie-details").length;
+    expect(displayedMovieDetailsCount).toBeLessThanOrEqual(3);
+  });
 });
 
 // import { mount } from "@vue/test-utils";

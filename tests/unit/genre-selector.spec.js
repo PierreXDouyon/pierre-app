@@ -47,6 +47,26 @@ describe("GenreSelector.vue", () => {
   });
 });
 
+it("updates movie list on genre selection", async () => {
+  const genres = ["Action", "Romance", "Comedy", "Drama"];
+  const selectedGenre = "Action";
+  const selectGenre = jest.fn();
+
+  const wrapper = shallowMount(GenreSelector, {
+    props: {
+      genres,
+      selectedGenre,
+      selectGenre,
+    },
+  });
+
+  // Simulate clicking on a genre
+  await wrapper.find("li").trigger("click");
+
+  // Check if the selectGenre function was called with the clicked genre
+  expect(selectGenre).toHaveBeenCalledWith(genres[0]);
+});
+
 // import { mount } from "@vue/test-utils";
 // import GenreSelector from "@/components/GenreSelector.vue";
 

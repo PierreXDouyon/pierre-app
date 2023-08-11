@@ -130,7 +130,7 @@ export default {
           id: 12,
           title: "Movie 12",
           image: "https://placehold.co/300x200",
-          genre: "Romanace",
+          genre: "Romance",
           releaseDate: "2022-01-01",
           imdbRating: 7.5,
           description: "This is the description for Movie 1.",
@@ -138,6 +138,15 @@ export default {
         {
           id: 13,
           title: "Movie 13",
+          image: "https://placehold.co/300x200",
+          genre: "Romance",
+          releaseDate: "2022-01-01",
+          imdbRating: 7.5,
+          description: "This is the description for Movie 1.",
+        },
+        {
+          id: 14,
+          title: "Movie 14",
           image: "https://placehold.co/300x200",
           genre: "Romance",
           releaseDate: "2022-01-01",
@@ -170,7 +179,7 @@ export default {
         ];
       }
 
-      return filteredArray; // return the filtered movies
+      return filteredArray.slice(0, 3); // return the filtered movies
     },
   },
   methods: {
@@ -222,6 +231,22 @@ h1,
       justify-content: center;
       align-items: center;
       margin: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+
+    .movie-details {
+      align-items: start;
+      img {
+        width: 500px;
+        height: 300px;
+      }
     }
   }
 }
