@@ -650,7 +650,7 @@ export default {
   }
 
   .movie-description {
-    height: 60px;
+    height: 70px;
   }
 }
 
