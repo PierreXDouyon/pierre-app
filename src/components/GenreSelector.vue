@@ -2,7 +2,12 @@
   <div class="genre-selector">
     <p>Select a Genre:</p>
     <ul>
-      <li v-for="genre in genres" :key="genre" @click="selectGenre(genre)">
+      <li
+        v-for="genre in genres"
+        :key="genre"
+        @click="selectGenre(genre)"
+        class="genre"
+      >
         {{ genre }}
       </li>
     </ul>

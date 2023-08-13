@@ -13,6 +13,8 @@
       :selectedGenre="selectedGenre"
       :isfeatured="false"
     />
+    <!-- Button to scroll to top -->
+    <button @click="scrollToTop" id="scrollToTop"></button>
   </div>
 </template>
 <!--pass genres array + selectedGenre as props to genreselector, 
@@ -26,6 +28,7 @@ import MovieDetails from "./components/MovieDetails.vue";
 
 export default {
   name: "App",
+
   components: {
     GenreSelector,
     MovieList,
@@ -578,8 +581,10 @@ export default {
         },
       ],
       selectedGenre: null,
+      showReturnToTop: false,
     };
   },
+
   computed: {
     filteredMovies() {
       let filteredArray = [];
@@ -616,13 +621,37 @@ export default {
       this.selectedGenre = genre;
     },
     // updates the selectedGenre data with the provided genre
+
+    scrollToTop() {
+      const c = document.documentElement.scrollTop || document.body.scrollTop;
+      if (c > 0) {
+        window.requestAnimationFrame(this.scrollToTop);
+        window.scrollTo(0, c - c / 8);
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss">
+$netflixRed: #790b10;
+$netflixDarkRed: #8d0e14;
+$netflixBlack: #000;
+
+body {
+  background: linear-gradient(
+    to bottom,
+    $netflixBlack,
+    $netflixDarkRed
+  ); /* Netflix-inspired background gradient */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #fff; /* Default text color for the body */
+}
+
 .featured-movie {
-  color: green;
+  color: #e50914;
 }
 
 .movie-description {
@@ -639,18 +668,39 @@ export default {
   height: 100%;
   margin-top: 20px !important;
 
+  // h1 {
+  //   font-family: "Inter", sans-serif !important;
+  // }
+
   h2 {
+    font-family: "Limelight", cursive;
     height: 55px;
+    color: #fff;
+    padding: 15px 0;
+  }
+
+  p {
+    font-family: "Archivo Narrow", sans-serif;
   }
 
   button {
+    font-family: "Nunito", sans-serif;
     width: 250px;
     height: 40px;
     margin: auto;
+    background-color: #e50914;
+    border-radius: 25px;
+    color: #fff;
+    transition: transform 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
   }
 
   .movie-description {
-    height: 70px;
+    height: 85px;
   }
 }
 
@@ -660,14 +710,88 @@ h1,
   justify-content: center;
   align-items: center;
   margin: auto;
-
+  font-family: "Share Tech", sans-serif;
+  padding-top: 20px;
   ul {
     padding: initial;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px 0;
+    gap: 20px;
+    max-width: 520px;
+    width: 100%;
   }
 
   li {
     list-style-type: none;
     text-align: center;
+    font-family: "Nunito", sans-serif;
+    width: calc((50% - 60px));
+    height: 30px;
+    background-color: #e50914;
+    color: #fff;
+    transition: transform 0.3s;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+
+    &:hover {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  opacity: 0.7;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  behavior: "smooth";
+
+  &:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+
+  &::before {
+    content: "\2191";
+    font-size: 34px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #e50914;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #scrollToTop {
+    bottom: 10px;
+    right: 10px;
+
+    &::before {
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
   }
 }
 
@@ -711,6 +835,7 @@ h1,
   .movie-description {
     p {
       max-width: 300px !important;
+      margin: auto;
     }
   }
 
