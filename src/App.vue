@@ -7,8 +7,12 @@
       :selectGenre="handleSelectGenre"
     />
     <h1 class="featured-movie">Featured Movie</h1>
-    <MovieDetails :movie="featured" />
-    <MovieList :movies="filteredMovies" :selectedGenre="selectedGenre" />
+    <MovieDetails :movie="featured" :isfeatured="true" />
+    <MovieList
+      :movies="filteredMovies"
+      :selectedGenre="selectedGenre"
+      :isfeatured="false"
+    />
   </div>
 </template>
 <!--pass genres array + selectedGenre as props to genreselector, 
@@ -593,11 +597,11 @@ export default {
         first3Movies = this.movies;
         this.getRandomFeaturedMovies(first3Movies);
         first3Movies.splice(randomIndex, 1);
-        return first3Movies.slice(0, 3); // no radomized movices once page is loaded
+        return first3Movies.slice(0, 4); // no radomized movices once page is loaded
         // return first3Movies.sort(() => Math.random() - 0.5).slice(0, 3); // radomized movices once page is loaded
       }
       filteredArray.sort(() => Math.random() - 0.5); // get ramdom array
-      return filteredArray.slice(0, 9); // return the filtered movies
+      return filteredArray.slice(0, 8); // return the filtered movies
     },
   },
   methods: {
@@ -626,13 +630,28 @@ export default {
   margin: auto;
 }
 
+.featured-details,
 .movie-details {
-  display: grid;
   text-align: center;
   justify-content: center;
   align-items: center;
   margin: auto;
   height: 100%;
+  margin-top: 20px !important;
+
+  h2 {
+    height: 55px;
+  }
+
+  button {
+    width: 250px;
+    height: 40px;
+    margin: auto;
+  }
+
+  .movie-description {
+    height: 60px;
+  }
 }
 
 h1,
@@ -653,6 +672,7 @@ h1,
 }
 
 @media screen and (min-width: 768px) {
+  .featured-details,
   .movie-details {
     img {
       width: 600px;
@@ -661,7 +681,7 @@ h1,
 
     button {
       height: 40px;
-      width: 50%;
+      width: 250px;
       display: flex;
       /* text-align: center; */
       justify-content: center;
@@ -671,65 +691,121 @@ h1,
   }
 }
 
-@media screen and (max-width: 820px) {
-  .movie-list {
-    .movie-details {
-      img {
-        width: 500px;
-      }
-
-      h2 {
-        max-width: 500px;
-      }
-    }
-  }
-
-  .movie-details {
-    h2 {
-      max-width: 700px;
-    }
-  }
-
-  .movie-description {
-    p {
-      max-width: 500px !important;
-    }
-  }
-}
-
 @media screen and (max-width: 414px) {
-  .movie-details {
+  .featured-details {
     button {
       margin-bottom: 30px;
     }
+
+    img {
+      width: 310px !important;
+      margin: auto;
+    }
+
+    h2 {
+      max-width: 300px;
+      margin: auto;
+    }
   }
 
   .movie-description {
     p {
-      max-width: 250px !important;
+      max-width: 300px !important;
     }
   }
 
   .movie-list {
     .movie-details {
       img {
-        width: 250px;
+        width: 300px !important;
+        margin: auto;
       }
 
       h2 {
-        max-width: 250px !important;
+        max-width: 300px !important;
+        margin: auto;
       }
-    }
-  }
-
-  .movie-details {
-    h2 {
-      max-width: 300px;
     }
   }
 }
 
-@media screen and (min-width: 1080px) {
+@media (min-width: 576px) and (max-width: 768px) {
+  .featured-details {
+    img {
+      width: 500px;
+      height: 300px;
+    }
+  }
+
+  .movie-details {
+    img {
+      width: 400px !important;
+      height: 250px !important;
+    }
+
+    h2 {
+      width: 400px;
+      margin: auto;
+    }
+
+    p {
+      width: 400px;
+    }
+  }
+}
+
+@media (min-width: 414px) and (max-width: 576px) {
+  .featured-details {
+    img {
+      width: 400px;
+      height: 300px;
+    }
+
+    h2 {
+      width: 400px;
+      margin: auto;
+    }
+
+    p {
+      width: 400px;
+    }
+  }
+
+  .movie-details {
+    img {
+      width: 300px !important;
+      height: 250px !important;
+    }
+
+    h2 {
+      width: 300px;
+      margin: auto;
+    }
+
+    p {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 1448px) {
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px;
+
+    .movie-details {
+      align-items: start;
+
+      img {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1448px) {
   .movie-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -739,8 +815,24 @@ h1,
       align-items: start;
 
       img {
-        margin-top: 15%;
-        width: 500px;
+        width: 100%;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0px;
+
+    .movie-details {
+      align-items: start;
+
+      img {
+        width: 100%;
         height: 300px;
       }
     }

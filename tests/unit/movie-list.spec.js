@@ -42,7 +42,7 @@ describe("MovieList.vue", () => {
     });
   });
 
-  it("displays up to 9 movie details for the selected genre", () => {
+  it("displays up to 8 movie details for the selected genre", () => {
     const movies = [
       {
         id: 1,
@@ -64,9 +64,9 @@ describe("MovieList.vue", () => {
       },
     });
 
-    // Ensure that up to 9 movie details are displayed for the selected genre
+    // Ensure that up to 8 movie details are displayed for the selected genre
     const displayedMovieDetailsCount = wrapper.findAll(".movie-details").length;
-    expect(displayedMovieDetailsCount).toBeLessThanOrEqual(9);
+    expect(displayedMovieDetailsCount).toBeLessThanOrEqual(8);
   });
 
   it("does not include featured movie in filteredMovies after selecting a genre", async () => {

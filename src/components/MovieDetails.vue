@@ -1,6 +1,6 @@
 <template>
   <div class="movie-details" v-if="movie.genre === selectedGenre"></div>
-  <div class="movie-details">
+  <div :class="isfeatured ? 'featured-details' : 'movie-details'">
     <img :src="movie.image" alt="Movie Poster" />
     <h2>{{ movie.title }}</h2>
     <p>Genre: {{ movie.genre }}</p>
@@ -23,6 +23,7 @@ export default {
       type: Object,
       required: true,
     },
+    isfeatured: Boolean,
   },
 };
 </script>
