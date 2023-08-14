@@ -1,6 +1,6 @@
 <template>
   <div class="genre-selector">
-    <p id="genreTitle">Select a Genre:</p>
+    <p id="genreTitle">Select your genre!</p>
     <ul>
       <li
         v-for="genre in genres"

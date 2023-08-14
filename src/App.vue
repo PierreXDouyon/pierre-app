@@ -6,7 +6,15 @@
       :selectedGenre="selectedGenre"
       :selectGenre="handleSelectGenre"
     />
-    <h1 class="featured-movie">Featured Movie</h1>
+    <h1
+      class="featured-movie"
+      style="
+        text-shadow: 2px 2px 0 white !important;
+        font-size: 3.2rem !important;
+      "
+    >
+      Featured Movie
+    </h1>
     <MovieDetails :movie="featured" :isfeatured="true" />
     <MovieList
       :movies="filteredMovies"
@@ -42,7 +50,8 @@ export default {
         {
           id: 1,
           title: "Mission: Impossible Dead Reckoning Part One",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-07-14",
           imdbRating: 8.0,
@@ -51,38 +60,42 @@ export default {
         },
         {
           id: 2,
-          title: "Teenage Mutant Ninja Turtles: Mutant Mayhem",
-          image: "https://placehold.co/300x200",
-          genre: "Action",
-          releaseDate: "2023-06-16",
-          imdbRating: 7.6,
+          title: "Barbie",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
+          genre: "Romance",
+          releaseDate: "2023-06-23",
+          imdbRating: 7.4,
           description:
-            "The Turtles face their greatest challenge yet when they encounter an army of mutants created by the Shredder.",
+            "Barbie suffers a crisis that leads her to question her world and her existence.",
         },
         {
           id: 3,
-          title: "Meg 2: The Trench",
-          image: "https://placehold.co/300x200",
-          genre: "Action",
-          releaseDate: "2023-04-21",
-          imdbRating: 7.4,
+          title: "Green Book",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
+          genre: "Drama",
+          releaseDate: "2018-11-16",
+          imdbRating: 8.2,
           description:
-            "Jonas Taylor and his team return to the depths of the ocean to stop a new threat: a prehistoric shark bigger than the Megalodon.",
+            "A working - class Italian- American bouncer becomes the driver of an African - American classical pianist on a tour of venues through the 1960s American South.",
         },
         {
           id: 4,
-          title: "Guardians of the Galaxy Vol. 3",
-          image: "https://placehold.co/300x200",
-          genre: "Action",
-          releaseDate: "2023-07-14",
-          imdbRating: 8.0,
+          title: "Game Night",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
+          genre: "Comedy",
+          releaseDate: "2018-02-23",
+          imdbRating: 6.9,
           description:
-            "The Guardians of the Galaxy continue their adventures across the cosmos and deal with the aftermath of Thanos’ snap.",
+            "A group of friends who meet regularly for game nights find themselves entangled in a real - life mystery when the shady brother of one of them is seemingly kidnapped by dangerous gangsters.",
         },
         {
           id: 5,
           title: "They Cloned Tyrone",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-02-18",
           imdbRating: 6.7,
@@ -92,7 +105,8 @@ export default {
         {
           id: 6,
           title: "The Flash",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-11-04",
           imdbRating: 6.9,
@@ -102,7 +116,8 @@ export default {
         {
           id: 7,
           title: "Sympathy for the Devil",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-08-25",
           imdbRating: 5.6,
@@ -112,7 +127,8 @@ export default {
         {
           id: 8,
           title: "John Wick: Chapter 4",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-05-27",
           imdbRating: 7.8,
@@ -122,7 +138,8 @@ export default {
         {
           id: 9,
           title: "The Covenant",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-01-13",
           imdbRating: 7.5,
@@ -132,7 +149,8 @@ export default {
         {
           id: 10,
           title: "Kill Boksoon",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-03-10",
           imdbRating: 7.2,
@@ -142,7 +160,8 @@ export default {
         {
           id: 11,
           title: "The Super Mario Bros.Movie",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2023-12-21",
           imdbRating: 6.8,
@@ -152,7 +171,8 @@ export default {
         {
           id: 12,
           title: "Black Panther II",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2022-11-11",
           imdbRating: 7.5,
@@ -162,7 +182,8 @@ export default {
         {
           id: 13,
           title: "The Matrix Resurrections",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
           genre: "Action",
           releaseDate: "2021-12-22",
           imdbRating: 7.4,
@@ -171,18 +192,20 @@ export default {
         },
         {
           id: 14,
-          title: "Barbie",
-          image: "https://placehold.co/300x200",
-          genre: "Romance",
-          releaseDate: "2023-06-23",
-          imdbRating: 7.4,
+          title: "Teenage Mutant Ninja Turtles: Mutant Mayhem",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
+          genre: "Action",
+          releaseDate: "2023-06-16",
+          imdbRating: 7.6,
           description:
-            "Barbie suffers a crisis that leads her to question her world and her existence.",
+            "The Turtles face their greatest challenge yet when they encounter an army of mutants created by the Shredder.",
         },
         {
           id: 15,
           title: "Happiness for Beginners",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2023-02-14",
           imdbRating: 7.2,
@@ -192,7 +215,8 @@ export default {
         {
           id: 16,
           title: "A Star Is Born",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-10-05",
           imdbRating: 7.6,
@@ -202,7 +226,8 @@ export default {
         {
           id: 17,
           title: "Love, Simon",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-03-16",
           imdbRating: 7.6,
@@ -212,7 +237,8 @@ export default {
         {
           id: 18,
           title: "Crazy Rich Asians",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-08-15",
           imdbRating: 6.9,
@@ -222,7 +248,8 @@ export default {
         {
           id: 19,
           title: "If Beale Street Could Talk",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-12-25",
           imdbRating: 7.1,
@@ -232,7 +259,8 @@ export default {
         {
           id: 20,
           title: "Blame",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-01-05",
           imdbRating: 5.8,
@@ -242,7 +270,8 @@ export default {
         {
           id: 21,
           title: "Mary Shelley",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-05-25",
           imdbRating: 6.4,
@@ -252,7 +281,8 @@ export default {
         {
           id: 22,
           title: "The Guernsey Literary and Potato Peel Pie Society",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-04-20",
           imdbRating: 7.4,
@@ -262,7 +292,8 @@ export default {
         {
           id: 23,
           title: "To All the Boys I’ve Loved Before",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2018-08-17",
           imdbRating: 7.1,
@@ -272,7 +303,8 @@ export default {
         {
           id: 24,
           title: "Call Me by Your Name",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2017-11-24",
           imdbRating: 7.8,
@@ -282,7 +314,8 @@ export default {
         {
           id: 25,
           title: "The Big Sick",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2017-07-14",
           imdbRating: 7.5,
@@ -292,7 +325,8 @@ export default {
         {
           id: 26,
           title: "The Shape of Water",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/C724B1/eee?font=raleway&text=ROMANCE",
           genre: "Romance",
           releaseDate: "2017 - 12 - 22",
           imdbRating: 7.3,
@@ -301,18 +335,20 @@ export default {
         },
         {
           id: 27,
-          title: "Green Book",
-          image: "https://placehold.co/300x200",
-          genre: "Drama",
-          releaseDate: "2018-11-16",
-          imdbRating: 8.2,
+          title: "Meg 2: The Trench",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
+          genre: "Action",
+          releaseDate: "2023-04-21",
+          imdbRating: 7.4,
           description:
-            "A working - class Italian- American bouncer becomes the driver of an African - American classical pianist on a tour of venues through the 1960s American South.",
+            "Jonas Taylor and his team return to the depths of the ocean to stop a new threat: a prehistoric shark bigger than the Megalodon.",
         },
         {
           id: 28,
           title: "Joker",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2019-10-04",
           imdbRating: 8.4,
@@ -322,7 +358,8 @@ export default {
         {
           id: 29,
           title: "Parasite",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2019-10-11",
           imdbRating: 8.6,
@@ -332,7 +369,8 @@ export default {
         {
           id: 30,
           title: "1917",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2020-01-10",
           imdbRating: 8.3,
@@ -342,7 +380,8 @@ export default {
         {
           id: 31,
           title: "The Trial of the Chicago 7",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2020-10-16",
           imdbRating: 7.8,
@@ -352,7 +391,8 @@ export default {
         {
           id: 32,
           title: "Nomadland",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-02-19",
           imdbRating: 7.4,
@@ -362,7 +402,8 @@ export default {
         {
           id: 33,
           title: "The Father",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-02-26",
           imdbRating: 8.3,
@@ -372,7 +413,8 @@ export default {
         {
           id: 34,
           title: "Dune",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-10-22",
           imdbRating: 8.1,
@@ -382,7 +424,8 @@ export default {
         {
           id: 35,
           title: "The Power of the Dog",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-12-01",
           imdbRating: 7.6,
@@ -392,7 +435,8 @@ export default {
         {
           id: 36,
           title: "Don’t Look Up",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-12-24",
           imdbRating: 7.3,
@@ -402,7 +446,8 @@ export default {
         {
           id: 37,
           title: "The Tragedy of Macbeth",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2022-01-14",
           imdbRating: 8.4,
@@ -412,7 +457,8 @@ export default {
         {
           id: 38,
           title: "The Lost Daughter",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-12-17",
           imdbRating: 7.5,
@@ -422,7 +468,8 @@ export default {
         {
           id: 39,
           title: "The Last Duel",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2021-10-15",
           imdbRating: 7.6,
@@ -432,7 +479,8 @@ export default {
         {
           id: 40,
           title: "Bohemian Rhapsody",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/3333ff/eee?font=raleway&text=DRAMA",
           genre: "Drama",
           releaseDate: "2018-11-02",
           imdbRating: 7.9,
@@ -441,18 +489,20 @@ export default {
         },
         {
           id: 41,
-          title: "Game Night",
-          image: "https://placehold.co/300x200",
-          genre: "Comedy",
-          releaseDate: "2018-02-23",
-          imdbRating: 6.9,
+          title: "Guardians of the Galaxy Vol. 3",
+          image:
+            "https://placehold.co/300x200/ff6700/eee?font=raleway&text=ACTION",
+          genre: "Action",
+          releaseDate: "2023-07-14",
+          imdbRating: 8.0,
           description:
-            "A group of friends who meet regularly for game nights find themselves entangled in a real - life mystery when the shady brother of one of them is seemingly kidnapped by dangerous gangsters.",
+            "The Guardians of the Galaxy continue their adventures across the cosmos and deal with the aftermath of Thanos’ snap.",
         },
         {
           id: 42,
           title: "Deadpool 2",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2018-05-18",
           imdbRating: 7.7,
@@ -462,7 +512,8 @@ export default {
         {
           id: 43,
           title: "The Lego Movie 2: The Second Part",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2019-02-08",
           imdbRating: 6.6,
@@ -472,7 +523,8 @@ export default {
         {
           id: 44,
           title: "Knives Out",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2019-11-27",
           imdbRating: 7.9,
@@ -482,7 +534,8 @@ export default {
         {
           id: 45,
           title: "Jojo Rabbit",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2019-11-08",
           imdbRating: 7.9,
@@ -492,7 +545,8 @@ export default {
         {
           id: 46,
           title: "Borat Subsequent Moviefilm",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2020-10-23",
           imdbRating: 6.7,
@@ -502,7 +556,8 @@ export default {
         {
           id: 47,
           title: "Palm Springs",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2020-07-10",
           imdbRating: 7.4,
@@ -512,7 +567,8 @@ export default {
         {
           id: 48,
           title: "The King of Staten Island",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2020-06-12",
           imdbRating: 7.1,
@@ -522,7 +578,8 @@ export default {
         {
           id: 49,
           title: "Free Guy",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2021-08-13",
           imdbRating: 7.3,
@@ -532,7 +589,8 @@ export default {
         {
           id: 50,
           title: "The Disaster Artist",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2017-12-08",
           imdbRating: 7.4,
@@ -542,7 +600,8 @@ export default {
         {
           id: 51,
           title: "Deadpool",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2016-02 - 12",
           imdbRating: 8.0,
@@ -552,7 +611,8 @@ export default {
         {
           id: 52,
           title: "Zootopia",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2016-03-04",
           imdbRating: 8.0,
@@ -562,7 +622,8 @@ export default {
         {
           id: 53,
           title: "The Nice Guys",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2016-05-20",
           imdbRating: 7.4,
@@ -572,7 +633,8 @@ export default {
         {
           id: 54,
           title: "La La Land",
-          image: "https://placehold.co/300x200",
+          image:
+            "https://placehold.co/300x200/F7BD02/eee?font=raleway&text=COMEDY",
           genre: "Comedy",
           releaseDate: "2016-12-09",
           imdbRating: 8.0,
@@ -643,28 +705,41 @@ body {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   color: #fff;
   font-size: 16px;
 
   #genreTitle {
     font-family: "Archivo Narrow", sans-serif;
-    font-size: 1.7rem;
-  }
-
-  h1 {
-    font-size: 3.55rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.05em;
+    text-shadow: 2.2px 2.2px 0 #767676;
     font-style: italic;
   }
-}
 
-.featured-movie {
-  color: #e50914;
+  // .featured-movie {
+  //   color: #e50914;
+  //   #h1fm {
+  //     font-size: 3rem !important;
+  //     text-shadow: 4px 4px 0 white !important;
+  //   }
+  // }
+
+  .featured-movie {
+    color: #e50914;
+  }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.4rem;
+    font-style: italic;
+    // -webkit-text-stroke: 0.1px black;
+    text-shadow: 4px 4px 0 #767575;
   }
 }
+
+// .featured-movie {
+//   color: #e50914;
+// }
 
 .movie-description {
   max-width: 400px !important;
@@ -683,18 +758,26 @@ body {
   h2 {
     font-family: "Limelight", cursive;
     font-size: 1.7rem;
+    -webkit-text-stroke: 0.275px red;
+    text-shadow: 3px 3px 0 black;
     height: 55px;
     color: #fff;
-    padding: 15px 0 50px 0;
+    // padding: 5px 0 55px 0;
+    padding: 5px 0 30px 0;
+    line-height: 1;
   }
 
   p {
     font-family: "Share Tech", sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.65rem;
+    text-shadow: 3px 3px 0 black;
+    letter-spacing: 0.01em;
   }
 
   button {
     font-family: "Nunito", sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0 black;
     width: 250px;
     height: 40px;
     margin: auto;
@@ -721,7 +804,7 @@ h1,
   align-items: center;
   margin: auto;
   font-family: "Share Tech", sans-serif;
-  padding-top: 20px;
+  padding-top: 15px;
   ul {
     padding: initial;
     display: flex;
@@ -729,7 +812,7 @@ h1,
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 20px 0;
+    padding-bottom: 25px;
     gap: 20px;
     max-width: 520px;
     width: 100%;
@@ -739,6 +822,8 @@ h1,
     list-style-type: none;
     text-align: center;
     font-family: "Nunito", sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0 black;
     width: calc((50% - 60px));
     height: 30px;
     background-color: #e50914;
@@ -839,6 +924,7 @@ h1,
     h2 {
       max-width: 300px;
       margin: auto;
+      padding-top: 20px;
     }
   }
 
@@ -969,6 +1055,7 @@ h1,
       img {
         width: 100%;
         height: 300px;
+        margin-bottom: -25px;
       }
     }
   }
