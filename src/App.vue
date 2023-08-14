@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>My Movie App</h1>
+    <h1>MOVIE RECOMMENDER 9000</h1>
     <GenreSelector
       :genres="genres"
       :selectedGenre="selectedGenre"
@@ -636,22 +636,34 @@ export default {
 <style lang="scss">
 $netflixRed: #790b10;
 $netflixDarkRed: #8d0e14;
-$netflixBlack: #000;
+$netflixBlack: #160101;
 
 body {
-  background: linear-gradient(
-    to bottom,
-    $netflixBlack,
-    $netflixDarkRed
-  ); /* Netflix-inspired background gradient */
+  background: linear-gradient(to bottom, $netflixBlack, $netflixDarkRed);
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #fff; /* Default text color for the body */
+  color: #fff;
+  font-size: 16px;
+
+  #genreTitle {
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 1.7rem;
+  }
+
+  h1 {
+    font-size: 3.55rem;
+    font-style: italic;
+  }
 }
 
 .featured-movie {
   color: #e50914;
+
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 .movie-description {
@@ -668,19 +680,17 @@ body {
   height: 100%;
   margin-top: 20px !important;
 
-  // h1 {
-  //   font-family: "Inter", sans-serif !important;
-  // }
-
   h2 {
     font-family: "Limelight", cursive;
+    font-size: 1.7rem;
     height: 55px;
     color: #fff;
-    padding: 15px 0;
+    padding: 15px 0 50px 0;
   }
 
   p {
-    font-family: "Archivo Narrow", sans-serif;
+    font-family: "Share Tech", sans-serif;
+    font-size: 1.8rem;
   }
 
   button {
@@ -700,7 +710,7 @@ body {
   }
 
   .movie-description {
-    height: 85px;
+    height: 180px;
   }
 }
 
@@ -799,8 +809,8 @@ h1,
   .featured-details,
   .movie-details {
     img {
-      width: 600px;
-      height: 400px;
+      width: 700px;
+      height: 450px;
     }
 
     button {
@@ -923,7 +933,7 @@ h1,
       align-items: start;
 
       img {
-        width: 100%;
+        width: 95%;
         height: 300px;
       }
     }
@@ -961,6 +971,50 @@ h1,
         height: 300px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 980px) {
+  h1 {
+    font-size: 5rem !important; /* 20% increase from 3.6rem */
+  }
+
+  .movie-description {
+    padding-bottom: 55px;
+  }
+
+  #genreTitle {
+    font-size: 2.2rem !important; /* 20% increase from 1.8rem */
+  }
+
+  .featured-details {
+    h2 {
+      font-size: 4rem !important; /* 20% increase from 1.8rem */
+    }
+
+    p {
+      font-size: 1.8rem !important; /* 20% increase from 1.8rem */
+      margin-bottom: 70px;
+    }
+  }
+  .movie-details {
+    /* ... (existing featured-details and movie-details styles) ... */
+    h2 {
+      font-size: 2.2rem; /* 20% increase from 1.7rem */
+    }
+
+    p {
+      font-size: 1.7rem; /* 20% increase from 1.8rem */
+    }
+
+    .movie-description {
+      padding-bottom: 45px;
+    }
+  }
+
+  button,
+  li {
+    font-size: 1.2rem;
   }
 }
 </style>
