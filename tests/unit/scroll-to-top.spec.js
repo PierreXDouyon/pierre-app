@@ -1,9 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
-import App from "@/App.vue";
-
-describe("App.vue", () => {
+import scrollToTop from "@/components/ScrollToTop.vue";
+describe("ScrollToTop.vue", () => {
   it("scrolls to top when button is clicked", async () => {
-    const wrapper = shallowMount(App);
+    const wrapper = shallowMount(scrollToTop);
 
     // Mock the scrollToTop method
     const scrollToTopMock = jest.fn();

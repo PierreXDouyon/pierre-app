@@ -21,8 +21,9 @@
       :selectedGenre="selectedGenre"
       :isfeatured="false"
     />
-    <!-- Button to scroll to top -->
-    <button @click="scrollToTop" id="scrollToTop"></button>
+    <ScrollToTop />
+
+    <!-- <button @click="scrollToTop" id="scrollToTop"></button> -->
   </div>
 </template>
 <!--pass genres array + selectedGenre as props to genreselector, 
@@ -33,6 +34,7 @@ pass the selectedGenre data as a prop to MovieList -->
 import GenreSelector from "./components/GenreSelector.vue";
 import MovieList from "./components/MovieList.vue";
 import MovieDetails from "./components/MovieDetails.vue";
+import ScrollToTop from "./components/ScrollToTop.vue";
 
 export default {
   name: "App",
@@ -41,6 +43,7 @@ export default {
     GenreSelector,
     MovieList,
     MovieDetails,
+    ScrollToTop,
   },
   data() {
     return {
@@ -643,7 +646,7 @@ export default {
         },
       ],
       selectedGenre: null,
-      showReturnToTop: false,
+      // showReturnToTop: false,
     };
   },
 
@@ -684,13 +687,13 @@ export default {
     },
     // updates the selectedGenre data with the provided genre
 
-    scrollToTop() {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(this.scrollToTop);
-        window.scrollTo(0, c - c / 8);
-      }
-    },
+    // scrollToTop() {
+    //   const c = document.documentElement.scrollTop || document.body.scrollTop;
+    //   if (c > 0) {
+    //     window.requestAnimationFrame(this.scrollToTop);
+    //     window.scrollTo(0, c - c / 8);
+    //   }
+    // },
   },
 };
 </script>
