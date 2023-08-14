@@ -89,7 +89,7 @@ export default {
           releaseDate: "2018-02-23",
           imdbRating: 6.9,
           description:
-            "A group of friends who meet regularly for game nights find themselves entangled in a real - life mystery when the shady brother of one of them is seemingly kidnapped by dangerous gangsters.",
+            "A group of friends who meet regularly for game nights find themselves entangled in a real - life mystery.",
         },
         {
           id: 5,
@@ -111,7 +111,7 @@ export default {
           releaseDate: "2023-11-04",
           imdbRating: 6.9,
           description:
-            "Barry Allen, a forensic scientist who gains super-speed after being struck by lightning, travels back in time to save his mother’s life and alters the course of history.",
+            "Barry Allen, a forensic scientist who gains super-speed after being struck by lightning, travels back in time to save his mother’s life and alters history.",
         },
         {
           id: 7,
@@ -133,7 +133,7 @@ export default {
           releaseDate: "2023-05-27",
           imdbRating: 7.8,
           description:
-            "John Wick is on the run after killing a member of the international assassin’s guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
+            "John Wick is on the run after killing a member of the international assassin’s guild, and with a $14 million price tag on his head, he is the target of all hit men/women.",
         },
         {
           id: 9,
@@ -320,7 +320,7 @@ export default {
           releaseDate: "2017-07-14",
           imdbRating: 7.5,
           description:
-            "Pakistan - born comedian Kumail Nanjiani and grad student Emily Gardner fall in love but struggle as their cultures clash.When Emily contracts a mysterious illness, Kumail finds himself forced to face her feisty parents, his family’s expectations, and his true feelings.",
+            "Comedian Kumail Nanjiani and grad student Emily Gardner fall in love but struggle as their cultures clash.When Emily contracts an illness.",
         },
         {
           id: 26,
@@ -331,7 +331,7 @@ export default {
           releaseDate: "2017 - 12 - 22",
           imdbRating: 7.3,
           description:
-            "At a top secret research facility in the 1960s, a lonely janitor forms a unique relationship with an amphibious creature that is being held in captivity.",
+            "At a top secret research facility in the 1960s, a lonely janitor forms a unique relationship with an amphibious creature that's held in captivity.",
         },
         {
           id: 27,
@@ -353,7 +353,7 @@ export default {
           releaseDate: "2019-10-04",
           imdbRating: 8.4,
           description:
-            "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society.He then embarks on a downward spiral of revolution and bloody crime.This path brings him face- to - face with his alter - ego: the Joker.",
+            "A mentally troubled comedian Arthur Fleck is disregarded and mistreated by society.He then embarks on a downward spiral of revolution and bloody crime.",
         },
         {
           id: 29,
@@ -375,7 +375,7 @@ export default {
           releaseDate: "2020-01-10",
           imdbRating: 8.3,
           description:
-            "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver a message that will stop 1, 600 men from walking straight into a deadly trap.",
+            "April 6th, 1917. As a regiment assembles to wage war deep in enemy territory, two soldiers are assigned to race against time and deliver his message.",
         },
         {
           id: 31,
@@ -386,7 +386,7 @@ export default {
           releaseDate: "2020-10-16",
           imdbRating: 7.8,
           description:
-            "The story of seven people on trial stemming from various charges surrounding the uprising at the 1968 Democratic National Convention in Chicago, Illinois.",
+            "The story of seven people on trial stemming from various charges surrounding the uprising at the 1968 Democratic National Convention in Chicago.",
         },
         {
           id: 32,
@@ -397,7 +397,7 @@ export default {
           releaseDate: "2021-02-19",
           imdbRating: 7.4,
           description:
-            "After losing everything in the Great Recession, a woman embarks on a journey through the American West, living as a van - dwelling modern - day nomad.",
+            "After losing everything in the Great Recession, a woman embarks on a journey through the American West, living as a van dweller.",
         },
         {
           id: 33,
@@ -408,7 +408,7 @@ export default {
           releaseDate: "2021-02-26",
           imdbRating: 8.3,
           description:
-            "A man refuses all assistance from his daughter as he ages.As he tries to make sense of his changing circumstances, he begins to doubt his loved ones, his own mind and even the fabric of his reality.",
+            "A man refuses all assistance from his daughter as he ages.As he tries to make sense of his changing circumstances, he begins to doubt his loved ones.",
         },
         {
           id: 34,
@@ -419,7 +419,7 @@ export default {
           releaseDate: "2021-10-22",
           imdbRating: 8.1,
           description:
-            "Feature adaptation of Frank Herbert’s science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
+            "Feature adaptation of Frank Herbert’s science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset.",
         },
         {
           id: 35,
@@ -430,7 +430,7 @@ export default {
           releaseDate: "2021-12-01",
           imdbRating: 7.6,
           description:
-            "Charismatic rancher Phil Burbank inspires fear and awe in those around him.When his brother brings home a new wife and her son, Phil torments them until he finds himself exposed to the possibility of love.",
+            "Charismatic rancher Phil Burbank inspires fear and awe in those around him.When his brother brings home a new wife and her son.",
         },
         {
           id: 36,
@@ -452,7 +452,7 @@ export default {
           releaseDate: "2022-01-14",
           imdbRating: 8.4,
           description:
-            "A Scottish lord becomes convinced by a trio of witches that he will become the next King of Scotland, and his ambitious wife supports him in his plans of seizing power.",
+            "A Scottish lord becomes convinced by a trio of witches that he will become the next King of Scotland, and his ambitious wife supports him in his plans.",
         },
         {
           id: 38,
@@ -771,7 +771,7 @@ body {
     font-family: "Share Tech", sans-serif;
     font-size: 1.65rem;
     text-shadow: 3px 3px 0 black;
-    letter-spacing: 0.01em;
+    // letter-spacing: 0.01em;
   }
 
   button {
