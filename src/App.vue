@@ -10,7 +10,7 @@
       class="featured-movie"
       id="featured-movie"
       style="
-        text-shadow: 2px 2px 0 white !important;
+        text-shadow: 2.5px 3px 0 white !important;
         font-size: 5.1rem !important;
       "
     >
@@ -707,8 +707,7 @@ body {
   }
 
   h1 {
-    font-size: 3.4rem;
-    font-style: italic;
+    font-size: 3.5rem;
     text-shadow: 4px 4px 0 #767575;
   }
 }
@@ -727,12 +726,10 @@ body {
   height: 100%;
   margin-top: 25px;
   padding-bottom: 25px;
-  display: grid;
-  line-height: 0.2;
 
   h2 {
     font-family: "Limelight", cursive;
-    font-size: 1.7rem;
+    font-size: 1.69rem;
     -webkit-text-stroke: 0.275px red;
     text-shadow: 3px 3px 0 black;
     height: 55px;
@@ -971,6 +968,7 @@ h1,
 
     p {
       width: 400px;
+      display: inline-block;
     }
   }
 
