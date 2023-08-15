@@ -896,7 +896,7 @@ h1,
     }
 
     img {
-      width: 310px !important;
+      width: 315px !important;
       margin: auto;
     }
 
