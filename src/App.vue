@@ -784,7 +784,7 @@ h1,
     align-items: center;
     margin: -25px auto auto auto;
     padding-bottom: 20px;
-    gap: 20px;
+    gap: 10px;
     max-width: 520px;
     width: 100%;
   }
