@@ -730,11 +730,10 @@ body {
   h2 {
     font-family: "Limelight", cursive;
     font-size: 1.69rem;
-    -webkit-text-stroke: 0.275px red;
-    text-shadow: 3px 3px 0 black;
+    text-shadow: 4px 4px 0 black;
     height: 55px;
     color: #fff;
-    padding: 20px 0 30px 0;
+    padding: 30px 0;
     line-height: 1;
   }
 
