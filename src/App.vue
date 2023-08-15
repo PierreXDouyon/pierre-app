@@ -8,9 +8,10 @@
     />
     <h1
       class="featured-movie"
+      id="featured-movie"
       style="
         text-shadow: 2px 2px 0 white !important;
-        font-size: 3.2rem !important;
+        font-size: 5.1rem !important;
       "
     >
       Featured Movie
@@ -22,14 +23,8 @@
       :isfeatured="false"
     />
     <ScrollToTop />
-
-    <!-- <button @click="scrollToTop" id="scrollToTop"></button> -->
   </div>
 </template>
-<!--pass genres array + selectedGenre as props to genreselector, 
-pass handleSelectGenre method as prop to genreselector, 
-pass the filteredMovies array as a prop to MovieList, 
-pass the selectedGenre data as a prop to MovieList -->
 <script>
 import GenreSelector from "./components/GenreSelector.vue";
 import MovieList from "./components/MovieList.vue";
@@ -646,7 +641,6 @@ export default {
         },
       ],
       selectedGenre: null,
-      // showReturnToTop: false,
     };
   },
 
@@ -656,9 +650,9 @@ export default {
       let randomIndex;
       if (this.selectedGenre) {
         filteredArray = this.movies.filter((movie) => {
-          return movie.genre === this.selectedGenre; // filter the array data with selected genre
+          return movie.genre === this.selectedGenre;
         });
-        randomIndex = Math.floor(Math.random() * filteredArray.length); // get the random index for the featured
+        randomIndex = Math.floor(Math.random() * filteredArray.length);
         this.getRandomFeaturedMovies(filteredArray);
         filteredArray.splice(randomIndex, 1);
       } else {
@@ -667,11 +661,10 @@ export default {
         first3Movies = this.movies;
         this.getRandomFeaturedMovies(first3Movies);
         first3Movies.splice(randomIndex, 1);
-        return first3Movies.slice(0, 4); // no radomized movices once page is loaded
-        // return first3Movies.sort(() => Math.random() - 0.5).slice(0, 3); // radomized movices once page is loaded
+        return first3Movies.slice(0, 4);
       }
-      filteredArray.sort(() => Math.random() - 0.5); // get ramdom array
-      return filteredArray.slice(0, 8); // return the filtered movies
+      filteredArray.sort(() => Math.random() - 0.5);
+      return filteredArray.slice(0, 8);
     },
   },
   methods: {
@@ -681,19 +674,9 @@ export default {
       array.splice(randomIndex, 1);
       this.featured = selectedMovie;
     },
-    // get unique random movice for featured
     handleSelectGenre(genre) {
       this.selectedGenre = genre;
     },
-    // updates the selectedGenre data with the provided genre
-
-    // scrollToTop() {
-    //   const c = document.documentElement.scrollTop || document.body.scrollTop;
-    //   if (c > 0) {
-    //     window.requestAnimationFrame(this.scrollToTop);
-    //     window.scrollTo(0, c - c / 8);
-    //   }
-    // },
   },
 };
 </script>
@@ -706,9 +689,8 @@ $netflixBlack: #160101;
 body {
   background: linear-gradient(to bottom, $netflixBlack, $netflixDarkRed);
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding: 0;
-  // font-family: Arial, sans-serif;
   color: #fff;
   font-size: 16px;
 
@@ -720,14 +702,6 @@ body {
     font-style: italic;
   }
 
-  // .featured-movie {
-  //   color: #e50914;
-  //   #h1fm {
-  //     font-size: 3rem !important;
-  //     text-shadow: 4px 4px 0 white !important;
-  //   }
-  // }
-
   .featured-movie {
     color: #e50914;
   }
@@ -735,14 +709,9 @@ body {
   h1 {
     font-size: 3.4rem;
     font-style: italic;
-    // -webkit-text-stroke: 0.1px black;
     text-shadow: 4px 4px 0 #767575;
   }
 }
-
-// .featured-movie {
-//   color: #e50914;
-// }
 
 .movie-description {
   max-width: 400px !important;
@@ -756,7 +725,10 @@ body {
   align-items: center;
   margin: auto;
   height: 100%;
-  margin-top: 20px !important;
+  margin-top: 25px;
+  padding-bottom: 25px;
+  display: grid;
+  line-height: 0.2;
 
   h2 {
     font-family: "Limelight", cursive;
@@ -765,16 +737,14 @@ body {
     text-shadow: 3px 3px 0 black;
     height: 55px;
     color: #fff;
-    // padding: 5px 0 55px 0;
-    padding: 5px 0 30px 0;
+    padding: 20px 0 30px 0;
     line-height: 1;
   }
 
   p {
     font-family: "Share Tech", sans-serif;
-    font-size: 1.65rem;
+    font-size: 1.43rem;
     text-shadow: 3px 3px 0 black;
-    // letter-spacing: 0.01em;
   }
 
   button {
@@ -788,6 +758,7 @@ body {
     border-radius: 25px;
     color: #fff;
     transition: transform 0.3s;
+    letter-spacing: 0.065em;
 
     &:hover {
       opacity: 0.5;
@@ -796,7 +767,7 @@ body {
   }
 
   .movie-description {
-    height: 180px;
+    height: 165px;
   }
 }
 
@@ -805,7 +776,7 @@ h1,
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 10px auto -20px auto;
   font-family: "Share Tech", sans-serif;
   padding-top: 15px;
   ul {
@@ -814,8 +785,8 @@ h1,
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    padding-bottom: 25px;
+    margin: -25px auto auto auto;
+    padding-bottom: 20px;
     gap: 20px;
     max-width: 520px;
     width: 100%;
@@ -840,6 +811,7 @@ h1,
     align-items: center;
     justify-content: center;
     border: 1px solid #fff;
+    letter-spacing: 0.04em;
 
     &:hover {
       opacity: 0.5;
@@ -894,18 +866,25 @@ h1,
 }
 
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 5.7rem !important;
+  }
+
   .featured-details,
   .movie-details {
     img {
-      width: 700px;
+      width: 765px;
       height: 450px;
+    }
+
+    h2 {
+      font-size: 3.2rem;
     }
 
     button {
       height: 40px;
       width: 250px;
       display: flex;
-      /* text-align: center; */
       justify-content: center;
       align-items: center;
       margin: auto;
@@ -1022,7 +1001,7 @@ h1,
       align-items: start;
 
       img {
-        width: 95%;
+        width: 100%;
         height: 300px;
       }
     }
@@ -1065,40 +1044,31 @@ h1,
 }
 
 @media screen and (min-width: 980px) {
-  h1 {
-    font-size: 5rem !important; /* 20% increase from 3.6rem */
-  }
-
-  .movie-description {
-    padding-bottom: 55px;
-  }
-
   #genreTitle {
-    font-size: 2.2rem !important; /* 20% increase from 1.8rem */
+    font-size: 2.2rem !important;
   }
 
   .featured-details {
     h2 {
-      font-size: 4rem !important; /* 20% increase from 1.8rem */
+      font-size: 4rem !important;
     }
 
     p {
-      font-size: 1.8rem !important; /* 20% increase from 1.8rem */
+      font-size: 1.8rem !important;
       margin-bottom: 70px;
     }
   }
   .movie-details {
-    /* ... (existing featured-details and movie-details styles) ... */
     h2 {
-      font-size: 2.2rem; /* 20% increase from 1.7rem */
+      font-size: 2.2rem;
     }
 
     p {
-      font-size: 1.7rem; /* 20% increase from 1.8rem */
+      font-size: 1.65rem;
     }
 
     .movie-description {
-      padding-bottom: 45px;
+      padding-bottom: 10px;
     }
   }
 
