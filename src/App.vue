@@ -10,7 +10,7 @@
       class="featured-movie"
       id="featured-movie"
       style="
-        text-shadow: 2.5px 3px 0 white !important;
+        text-shadow: 2.5px 2.5px 0 white !important;
         font-size: 5.1rem !important;
       "
     >
