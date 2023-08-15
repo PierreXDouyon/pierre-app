@@ -821,7 +821,7 @@ h1,
   bottom: 20px;
   right: 20px;
   background-color: transparent;
-  opacity: 0.7;
+  opacity: 0.5;
   border: none;
   cursor: pointer;
   transition: transform 0.3s;
