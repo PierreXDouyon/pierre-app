@@ -641,6 +641,7 @@ export default {
         },
       ],
       selectedGenre: null,
+      key: 0,
     };
   },
 
@@ -675,6 +676,7 @@ export default {
       this.featured = selectedMovie;
     },
     handleSelectGenre(genre) {
+      this.selectedGenre = "";
       this.selectedGenre = genre;
     },
   },
@@ -1051,7 +1053,7 @@ h1,
     }
 
     p {
-      font-size: 1.8rem !important;
+      font-size: 1.78rem !important;
       margin-bottom: 70px;
     }
   }

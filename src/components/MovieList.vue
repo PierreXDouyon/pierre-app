@@ -22,6 +22,7 @@ export default {
       type: Array,
       required: true,
     },
+    selectedGenre: String,
     isfeatured: Boolean,
   },
 };
